@@ -7,3 +7,4 @@ __pycache__/
 CLAUDE.md
 results/**/predictions*.csv
 results/layer_a/extension.csv
+manuscript/

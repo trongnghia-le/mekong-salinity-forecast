@@ -184,3 +184,15 @@ Approved by the owner on 01/11/2026, after the core-B run (none changes a model,
   check, not a forecast in time; reported as such.
 - **D3.** The Sông Đốc 42 g/L value (20/05/2020) has no target and predicts no row with a target, so its
   sensitivity run changes only the climatology benchmark.
+- **D4** (owner, 02/11/2026; before any H4 computation). H4 main loss model = the direct gauge-to-profit relation of
+  Le Phuong-Dung, Alpizar & Mills 2025 (Agric. Econ. 56:976-988, Table 4): profit linear in February maximum gauge
+  salinity, separate gated / ungated slopes (-184.4 / -1,127 thousand VND/ha per ‰, deflated to 2025 VND), anchored at
+  their group means, floored at -Cost2, salinity capped at 14 g/L (10 and 20 as sensitivity). Reason: same gauge
+  variable as our forecast target, with an estimated inside/outside contrast, instead of an unsourced gauge-to-field
+  factor. The FAO yield curve with a swept exposure factor becomes a sensitivity run. Parameters and sources:
+  docs/background/decision_parameters.md.
+- **D5** (owner, 02/11/2026; after the H4 run). H4 part (c) (larger value outside than inside sluice systems) is not
+  identifiable under D4: the early-sowing effect is constant across field types, so the forecast's value is
+  identical inside and outside wherever the profit floor does not bind; the computed difference (0.037 M VND/ha x
+  C/L, from the floor at C/L >= 0.75) is an artefact. Part (c) is therefore not reported in the manuscript; the
+  computed value stays in results/layer_a_decision/verdict_h4.md. H4 is reported on parts (a) and (b).

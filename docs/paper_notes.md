@@ -64,6 +64,54 @@
 - Live download with TLS verification off was denied by the Claude Code classifier ([TLS/Auth Weaken]).
 - Conclusion: JPG transcription cannot fill the Dec-Feb gaps; option 2 dropped.
 
+## 02/11/2026 — fig08 redrawn (scripts/run_h4.py fig08(); caption replaced)
+- Panel a: break-even P(severe) p* = -m/(Delta_sev - m) vs the unknown mild-season effect m (-10..+5 M VND/ha),
+  Ferrer 10.1 and Le 8.3; identical for gated and ungated (constant Delta), so one panel. p* at m = -2: 0.165 / 0.194
+  (77% / 76% of the 70 out-of-sample forecasts above); m = -4: 0.284 / 0.325 (70% / 66%); m = -10: ~0.50 / 0.55.
+  m >= 0: early sowing never worse. Panel b: standard vs salt-tolerant variety vs k (0.2-0.6); at k 0.4 inside
+  gates with yield gain p* 0.99, outside without gain 0.58. Skipping dominated in all settings.
+- To polish before submission: panel b legend lists an off-scale line and its right-hand axis label is crowded.
+
+## 02/11/2026 — DECISIONS (owner)
+- fig08 redrawn as break-even probability vs the unknown mild-season effect of early sowing (no fixed m).
+- Manuscript drafted progressively by an Opus agent in manuscript/ (Overleaf layout, elsarticle, Climate Services),
+  cover letter in the advisor's template format (.tex + .docx). manuscript/ is gitignored: never push.
+- D5 (H4 part c reporting) still to be explained to and decided by the owner.
+
+## 02/11/2026 — H4 + crop-option break-even (scripts/run_h4.py; results/layer_a_decision/; fig07, fig08)
+- Main: D4 loss model, S cap 14 g/L, Delta_sev 10.1 M VND/ha (Ferrer), 70 station-seasons, 2,000 season bootstraps,
+  seed 20261101; self-check passes (rerun 02/11). Areas over C/L 0.1-0.9, M VND/ha x C/L.
+- H4 NOT SUPPORTED (literal): (a) vs fixed calendar YES - regret reduction gated 1.53 [0.01, 3.05], ungated 1.56
+  [0.07, 3.06]; REV area 0.30-0.31. (b) vs climatology NO - 0.62 [-0.34, 1.49] / 0.65 [-0.27, 1.51]. (c) ungated >
+  gated "YES" 0.037 [0.006, 0.074] but an ARTEFACT of the -Cost2 floor at C/L >= 0.75: with a constant early-sowing
+  effect, gated and ungated value are identical. Do not cite (c) as evidence.
+- Literature C/L window (ungated, m -4.2..+4.7): 0-0.29. There, forecast vs fixed 0.75 [0.39, 1.12], vs climatology
+  0.00 [-0.14, 0.11]: knowing the climatological odds captures the value; the seasonal forecast adds nothing beyond it.
+- Gated m >= 0 (derived from Le 2025 calendar-COMPLIANCE effects, which are not an early-sowing estimate - mapping is
+  an assumption) => early sowing never worse inside sluices; no decision tradeoff there.
+- Break-even (main: m mid-range, k 0.4, F 3.15; S_sev 11.49, S_mild 7.54 g/L): skip (6) dominated everywhere;
+  gated: early sowing (2) dominates standard (1); 1 vs 3 crosses at p 0.76-0.99. Ungated: 2 vs 3 at 0.033 (sweep
+  0.004-0.49); 1 vs 2 crossing only in 44% of sweep points (0.08-0.29). Out-of-sample p_severe: median 0.57, 24% < 0.2,
+  24% > 0.8.
+- Sensitivity: S cap / slope SE / gated ratio barely matter (cancel in regret); Delta_sev 8.3 makes (a) marginal
+  (1.25 [-0.01, 2.50]); upper-tercile target: no support; FAO + f: value only for f >= 0.5 ungated, negative gated.
+- Paper framing: layer A is a short, honest scenario section - value over a fixed calendar, none shown beyond
+  climatology with 26 seasons; inside/outside contrast not identifiable without a group-specific action effect.
+- Proposed D5 (owner to decide): report H4(c) as "not identifiable under D4" alongside the literal number.
+
+## 02/11/2026 — Mills 2025 and Le Phuong-Dung 2025 read (owner downloaded; decision_parameters.md updated)
+- Le Phuong-Dung, Alpizar, Mills 2025 (Agric. Econ. 56(6):976-988): 775 households, 2,169 field-seasons, DX 2017/18-
+  2019/20; salinity = February MAXIMUM at nearest of 27 Southern-centre stations (‰; mean 6.99, SD 5.71). Table 4
+  (p.985): profit slope per ‰ all -541.7 (71.2), gated -184.4 (79.5), ungated -1,127 (135.8) thousand VND/ha; yield
+  -97.3 / -43.4 / -197.4 kg/ha per ‰. Gated/ungated profit ratio 0.16 (delta-method CI 0.02-0.31; to re-check).
+  Calendar compliance: gated +6,883 (1,369) k VND/ha, ungated +200 (n.s.); text p.986 disagrees with Table 4 (use Table 4).
+- Mills, Ta, Ta, Nguyen 2025 (JAAEA 4(2):170-186): sal3 = February station salinity > 3 g/L (statistic unstated);
+  IHS-profit coefficient -2.417 (0.937); "76%" profit loss is vs a simulated low-salinity profit (upper bound);
+  exits 22.3%; slope steepest below ~20 M VND/ha. No gated/ungated split. Coefficients spot-checked in the PDF text.
+- Proposed (owner to decide, = deviation after freeze D4): H4 main loss model = Le 2025 direct gauge-to-profit
+  slopes (gated/ungated), same gauge variable as ours; FAO curve + exposure factor becomes the sensitivity run.
+- Early sowing in a mild season: no estimate (swept); drives the option 1 vs 2 break-even.
+
 ## 01/11/2026 — Figures 1-6 (scripts/make_figures.py; figures/*.png 300 dpi + .svg; captions: figures/captions.md)
 - fig01_data_coverage: issue dates per season by source (live / Wayback / ODV-only) vs 21 canonical dates; test seasons
   shaded. fig02_mae_by_season: MAE with 95% bootstrap CIs, five methods, pooled + per test season.
