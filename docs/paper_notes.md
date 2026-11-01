@@ -64,6 +64,15 @@
 - Live download with TLS verification off was denied by the Claude Code classifier ([TLS/Auth Weaken]).
 - Conclusion: JPG transcription cannot fill the Dec-Feb gaps; option 2 dropped.
 
+## 01/11/2026 — Station coordinates: all cleared pending human check (owner)
+- Owner: Zenodo/OSM coordinates not trusted -> station_meta.csv lat/lon empty for all 37 stations
+  (merge_station_meta.py changed accordingly). Hiếu and Nam fill data/meta/station_coords_check.csv from Google Maps
+  with screenshots; guide: docs/huong_dan_kiem_tra_toa_do.md. Pass B's Zenodo points stay only in station_meta_B.csv.
+
+## 01/11/2026 — Protocol frozen
+- Owner approved docs/protocol.md; commit 1d72a22 tagged protocol-v1 and pushed. No model had been scored on a
+  test season. Later changes go to "Deviations after freeze".
+
 ## 01/11/2026 — DECISIONS (owner)
 - Climate Services is SCIE and JCR Q1 (owner checked, 01/11/2026). First-choice venue: Climate Services.
   APC 2,680 USD; Vietnam-based authors get a 50% waiver (owner) -> ~1,340 USD. Whether the 200 M VND funding pays
