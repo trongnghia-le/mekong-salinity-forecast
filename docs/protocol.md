@@ -176,4 +176,11 @@ Random seeds fixed and recorded per run.
 
 ## Deviations after freeze
 
-(none)
+Approved by the owner on 01/11/2026, after the core-B run (none changes a model, metric or verdict rule):
+- **D1.** Check 6.4(ii) (Jan-Feb 2020 monthly maxima) cannot be run as written: no bulletin exists between
+  25/12/2019 and 20/05/2020 in our data, so there is no current-dekad Smax at Jan-Feb 2020 issue dates. Only a
+  partial run is possible: the 4 PCTT stations on 20/02/2020 (a 6-day dekad, below the completeness rule).
+- **D2.** The 2020 extreme-season check trains on the 2021-2026 seasons (later in time). It is a season-held-out
+  check, not a forecast in time; reported as such.
+- **D3.** The Sông Đốc 42 g/L value (20/05/2020) has no target and predicts no row with a target, so its
+  sensitivity run changes only the climatology benchmark.

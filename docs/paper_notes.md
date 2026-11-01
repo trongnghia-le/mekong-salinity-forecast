@@ -64,6 +64,31 @@
 - Live download with TLS verification off was denied by the Claude Code classifier ([TLS/Auth Weaken]).
 - Conclusion: JPG transcription cannot fill the Dec-Feb gaps; option 2 dropped.
 
+## 01/11/2026 — CORE B RESULTS (protocol-v1; scripts/run_core_b.py; results/core_b/)
+- Run: 250 model fits, 31.8 min on 12 workers, seed 20261101, B = 2000; `--check` passes; pooled MAE and coverage
+  recomputed independently from predictions.csv and match. Test: 2024-2026, 27 issue dates, 732 station-dekads,
+  base rate P(Smax > 4) = 0.70.
+- H1 NOT SUPPORTED (both models). Pooled MAE: HGB 1.88, persistence 1.91, official 1.85, climatology 2.83 g/L.
+  HGB - persistence -0.02 [-0.13, 0.08]; HGB - official +0.03 [-0.15, 0.23]; beats climatology (MAE and Brier) and
+  persistence on Brier(4) (-0.025 [-0.039, -0.011]). QR worse than persistence (+0.54) because 2024 ONI lies far
+  outside the all-La-Niña training seasons (linear extrapolation; MAE 4.58 in 2024).
+- H2a SUPPORTED for HGB (forward CQR coverage 0.923 [0.898, 0.949]); QR over-covers (0.955). Raw HGB quantiles cover
+  only 0.817. H2b NOT SUPPORTED: its premise did not occur - plain conformal stayed >= 0.87 under transfer
+  (HGB leave-station-out 0.911, leave-province-out 0.892; Mondrian 0.900 / 0.902).
+- H3 SUPPORTED (both). Value-curve area at 4 g/L, C/L 0.1-0.9: HGB 0.557 [0.510, 0.603], QR 0.516, official 0.428
+  [0.337, 0.507]; HGB - official 0.129 [0.052, 0.211]. Holds in leave-station-out (0.124) and leave-province-out (0.122)
+  and in every sensitivity run. Peirce at 4 g/L: HGB 0.818 vs official 0.799 (n.s.).
+- Transfer cost: without the station's own history, HGB MAE - persistence = +0.25 [0.14, 0.36].
+- Sensitivity (lag 0/10, no ODV, no Sông Đốc 42, station-ID variant): no H1 verdict changes; H3 stays positive.
+- Extreme check 2020 (exploratory): PCTT next-dekad values at or below the CQR upper bound in 93% (HGB).
+- Proposed deviations after freeze (owner to decide): D1 check 6.4(ii) not runnable as written (no current-dekad
+  bulletin Jan-Feb 2020; only 4 PCTT stations on 20/02/2020); D2 the 2020 check trains on later seasons; D3 the
+  Sông Đốc 42 g/L row has no target, so its sensitivity run only touches climatology.
+- Paper message (draft): a pooled model matches the official forecast's accuracy; its calibrated probabilities add
+  economic value over the official deterministic forecast, and the intervals stay calibrated at unseen stations
+  and provinces.
+- predictions.csv contains transcribed NCHMF values (obs and official forecasts): do not publish until NCHMF permits.
+
 ## 01/11/2026 — Station coordinates: all cleared pending human check (owner)
 - Owner: Zenodo/OSM coordinates not trusted -> station_meta.csv lat/lon empty for all 37 stations
   (merge_station_meta.py changed accordingly). Hiếu and Nam fill data/meta/station_coords_check.csv from Google Maps
