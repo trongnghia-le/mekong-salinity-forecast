@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mekong Delta salinity forecast atlas</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Calibrated salinity-intrusion forecasts for unmonitored stations and their value for rice sowing decisions: Vietnamese Mekong Delta</h1>
+  <p>Dekadal (10-day) maximum salinity forecasts at 28 stations, with exceedance probabilities and conformal intervals, scored against persistence and the official NCHMF forecast.</p>
+  <p class="tag">Results under pre-registered protocol v1 (working title; forward-by-season test, 2024-2026)</p>
+</header>
+<main>
+  <section aria-labelledby="h-sum"><h2 id="h-sum">Pre-registered hypotheses</h2>
+    <div id="cards" class="cards"></div>
+    <h3>Per test season (HGB model)</h3>
+    <div class="scroll"><table id="seasons"></table></div>
+  </section>
+
+  <section aria-labelledby="h-map"><h2 id="h-map">Stations</h2>
+    <div class="two">
+      <div>
+        <div id="map" role="region" aria-label="Map of the Mekong Delta"></div>
+        <p id="pending" class="note" hidden>Station locations pending verification.</p>
+        <p class="note">Marker colour: skill vs persistence (blue = better, orange = worse).</p>
+      </div>
+      <div id="detail" class="detail" aria-live="polite"><p>Select a station in the table.</p></div>
+    </div>
+    <div class="scroll"><table id="stations"></table></div>
+    <p class="note">Scores are pooled over the 2024-2026 forward test issue dates. MAE in g/L. Coverage is for the nominal 90% CQR interval; "LOSO" = leave-station-out. Click a column header to sort.</p>
+  </section>
+
+  <section aria-labelledby="h-ch"><h2 id="h-ch">Decision value and calibration</h2>
+    <div class="two">
+      <figure><div id="chart-rev"></div><figcaption>Relative economic value at 4 g/L versus cost/loss ratio (forward test, pooled). Higher is better; values below -1 are clipped.</figcaption></figure>
+      <figure><div id="chart-rel"></div><figcaption>Reliability at 4 g/L (forward test, pooled): forecast probability versus observed frequency. Circle area grows with the number of forecasts per bin.</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="layer-a" aria-labelledby="h-a" hidden><h2 id="h-a">Layer A: sowing-date decision</h2>
+    <p>Seasonal severe-season forecast and crop break-even. To be filled.</p>
+  </section>
+
+  <section aria-labelledby="h-about"><h2 id="h-about">About &amp; data</h2>
+    <ul>
+      <li>Target: maximum salinity of the next 10-day period (dekad) at each station, issued with each NCHMF bulletin.</li>
+      <li>Inputs available at issue time only: lagged discharge, last dekad's maximum, astronomical tide.</li>
+      <li>Model: histogram gradient boosting with quantiles; conformalised quantile regression (CQR) gives 90% intervals; exceedance probabilities for 1, 2 and 4 g/L.</li>
+      <li>Tests: forward-by-season (shown), leave-station-out and leave-province-out coverage; verdicts follow criteria fixed before scoring (protocol v1).</li>
+      <li>Benchmarks: persistence, station climatology, the official NCHMF forecast; uncertainty from paired bootstrap over issue dates (2,000 resamples, 95%).</li>
+    </ul>
+    <h3>Licences and attributions</h3>
+    <ul>
+      <li>River discharge: GloFAS / Copernicus via Open-Meteo, CC BY 4.0.</li>
+      <li>ODV-derived training data: CC BY-SA 4.0.</li>
+      <li>NCHMF bulletins are &copy; NCHMF; their values are not shown here pending permission. Only aggregated scores appear.</li>
+      <li>Basemap &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors. Map library: Leaflet.</li>
+    </ul>
+    <p class="disclaimer"><strong>Disclaimer:</strong> research output. Not an official forecast and not farm advice.</p>
+  </section>
+</main>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -6,3 +6,4 @@ __pycache__/
 *.tif
 CLAUDE.md
 results/**/predictions*.csv
+results/layer_a/extension.csv

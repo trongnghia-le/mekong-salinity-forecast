@@ -1,0 +1,129 @@
+{
+ "model": "HGB (histogram gradient boosting, quantile + CQR)",
+ "design": "forward-by-season, test seasons 2024-2026",
+ "H1": {
+  "supported": false,
+  "criteria": {
+   "mae_diff_persist": {
+    "est": -0.0222,
+    "lo": -0.1292,
+    "hi": 0.0843,
+    "met": false
+   },
+   "mae_diff_clim": {
+    "est": -0.951,
+    "lo": -1.3611,
+    "hi": -0.5262,
+    "met": true
+   },
+   "mae_diff_official": {
+    "est": 0.0327,
+    "lo": -0.1509,
+    "hi": 0.2286,
+    "met": false
+   },
+   "brier_diff_persist_4": {
+    "est": -0.025,
+    "lo": -0.0391,
+    "hi": -0.0112,
+    "met": true
+   },
+   "brier_diff_clim_4": {
+    "est": -0.1056,
+    "lo": -0.1382,
+    "hi": -0.0721,
+    "met": true
+   }
+  },
+  "pss4": {
+   "model": 0.8175,
+   "official": 0.7988,
+   "diff": {
+    "est": 0.0184,
+    "lo": -0.0226,
+    "hi": 0.0597
+   }
+  }
+ },
+ "H2": {
+  "H2a_supported": true,
+  "cov_cqr_forward": {
+   "est": 0.9235,
+   "lo": 0.8975,
+   "hi": 0.9493
+  },
+  "cov_cqr_loso": {
+   "est": 0.9112,
+   "lo": 0.8837,
+   "hi": 0.9384
+  },
+  "cov_cqr_lopo": {
+   "est": 0.8921,
+   "lo": 0.8632,
+   "hi": 0.9208
+  }
+ },
+ "H3": {
+  "supported": true,
+  "rev_area_diff_official": {
+   "est": 0.1286,
+   "lo": 0.0524,
+   "hi": 0.2113
+  },
+  "rev_area": {
+   "model": 0.5567,
+   "official": 0.4281,
+   "persist": 0.4786
+  }
+ },
+ "seasons": [
+  {
+   "season": "2024",
+   "n": 168.0,
+   "mae_model": 2.1051,
+   "mae_persist": 1.9321,
+   "mae_official": 1.8488,
+   "cov_cqr": 0.9405,
+   "width_cqr": 11.4503,
+   "brier_model_4": 0.074,
+   "pss_model_4": 0.6501,
+   "pss_official_4": 0.647
+  },
+  {
+   "season": "2025",
+   "n": 348.0,
+   "mae_model": 1.644,
+   "mae_persist": 1.6716,
+   "mae_official": 1.5549,
+   "cov_cqr": 0.9425,
+   "width_cqr": 9.7038,
+   "brier_model_4": 0.0391,
+   "pss_model_4": 0.9011,
+   "pss_official_4": 0.8562
+  },
+  {
+   "season": "2026",
+   "n": 216.0,
+   "mae_model": 2.0971,
+   "mae_persist": 2.2625,
+   "mae_official": 2.3386,
+   "cov_cqr": 0.8796,
+   "width_cqr": 8.3883,
+   "brier_model_4": 0.0772,
+   "pss_model_4": 0.7606,
+   "pss_official_4": 0.7497
+  },
+  {
+   "season": "pooled",
+   "n": 732.0,
+   "mae_model": 1.8835,
+   "mae_persist": 1.9057,
+   "mae_official": 1.8529,
+   "cov_cqr": 0.9235,
+   "width_cqr": 9.7165,
+   "brier_model_4": 0.0583,
+   "pss_model_4": 0.8175,
+   "pss_official_4": 0.7988
+  }
+ ]
+}

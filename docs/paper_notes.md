@@ -64,6 +64,50 @@
 - Live download with TLS verification off was denied by the Claude Code classifier ([TLS/Auth Weaken]).
 - Conclusion: JPG transcription cannot fill the Dec-Feb gaps; option 2 dropped.
 
+## 01/11/2026 — Figures 1-6 (scripts/make_figures.py; figures/*.png 300 dpi + .svg; captions: figures/captions.md)
+- fig01_data_coverage: issue dates per season by source (live / Wayback / ODV-only) vs 21 canonical dates; test seasons
+  shaded. fig02_mae_by_season: MAE with 95% bootstrap CIs, five methods, pooled + per test season.
+  fig03_coverage_by_design: 90% coverage raw / CQR / Mondrian x forward / station-out / province-out, H2 band.
+  fig04_reliability_4gL: reliability with bin counts and base rate 0.70. fig05_economic_value: REV vs C/L, five methods,
+  H3 window shaded, y clipped at -0.6. fig06_extrapolation_2024: ONI 2024 (1.53-1.99) outside training range
+  (-1.11 to 0.66) and QR vs HGB MAE per season (caption states coincidence, not cause).
+- None shows per-row NCHMF values (counts, scores, ONI only). Palette passes the dataviz validator except the neutral
+  gray for climatology (dashed + own marker instead).
+- Reading fig05 for the text: HGB beats official mainly at low C/L (< ~0.3) and high C/L (> ~0.8); persistence is close
+  to HGB in the middle (0.3-0.7). Say this plainly; H3 is about the official forecast, not persistence.
+- Test set = 27 issue dates (verified in predictions.csv); 732 rows because not every date has all 28 stations.
+- Study-area map (fig00) waits for verified coordinates.
+
+## 01/11/2026 — Atlas skeleton (atlas/; scripts/build_atlas_data.py)
+- Static HTML + Leaflet (unpkg CDN) + JSON; English UI; H1/H2a/H3 cards, per-season table, sortable station table
+  (28 stations, HGB forward scores), value-curve and 4 g/L reliability charts (inline SVG), About/licences/disclaimer;
+  hidden #layer-a section. Markers appear only when verified coordinates exist (currently none).
+- Build self-check: no per-row NCHMF values in JSON (forbidden keys absent; station JSON scalars only). Re-run and
+  grep confirmed 0 forbidden keys. Local preview only: `cd atlas && python -m http.server 8765`. Not on GitHub Pages.
+- Later: markers after coordinate check, layer A panel, pin/vendor Leaflet, light-mode and keyboard check by owner.
+
+## 01/11/2026 — LAYER A: severe-season forecast (scripts/run_layer_a.py; results/layer_a/)
+- Leave-one-season-out, n = 70 station-seasons (Cầu Quan, Trà Vinh 1992-2016; Sơn Đốc 1997-2016; lag predictor drops
+  the first season), base rate 0.50. Unpenalised logistic, station dummies + ONI JAS, Tân Châu Sep-Oct Q, previous max.
+- Pooled BSS 0.253 [-0.023, 0.490] (recomputed: Brier 0.2035 vs climatology 0.2726), AUC 0.76 [0.60, 0.87].
+  Cầu Quan BSS 0.40 [0.07, 0.68]; Sơn Đốc 0.39 [-0.02, 0.72]; Trà Vinh -0.01 [-0.48, 0.39] (no skill).
+  Skill NOT established at pooled level (CI includes 0; 96.6% of resamples > 0). Sensitivity (upper tercile; GloFAS
+  predictor): pooled BSS 0.14-0.15, all CIs include 0.
+- Extension 2022, 2025 (bulletin lower bounds, n = 6): all severe; 2022 missed (p 0.11-0.23), 2025 Sơn Đốc caught
+  (0.91), Cầu Quan/Trà Vinh ~0.5. Anecdotal. extension.csv holds bulletin-derived maxima -> gitignored.
+- Apel et al. 2020 not compared (no number available offline).
+
+## 01/11/2026 — Decision parameters (docs/background/decision_parameters.md)
+- Checked in full text: Mills 2022 Table 1 (6.5 t/ha, 5,451 VND/kg, net revenue2 19.2 M VND/ha, 73% fields gated),
+  Tables 3-4 (STV +364 kg/ha, price -7%); Ferrer 2022 Tables 3-4 (severe 2019-20: early sowing profit 11.99 vs 3.26 M
+  VND/ha, yield 5.51 vs 3.09 t/ha; land rent 2.71 M/ha/yr); FAO rice 3.0 dS/m, 12%/dS/m; World Bank CPI 2017-2025.
+- NOT read (Wiley 403/Cloudflare): Mills 2025 (abstract: high salinity cuts profit > 75%; exits rise below 20 M VND/ha)
+  and Le Phuong-Dung 2025. Owner to download in a browser into data/raw/decision_papers/.
+- Proposed loss model: C_field = f x S (gauge severity), ECe = 1.56 C_field, FAO linear yield loss; STV k 0.2-0.6;
+  early sowing exposure reduction e 0.3-0.7 (calibrate to Ferrer +2.5 t/ha); skip = -fixed cost 0-3.15 M VND/ha;
+  f swept inside sluices 0-0.5, outside 0.25-1.0 (f = 1 implies near-total loss every year, contradicting yields).
+  Mild-season cost of early sowing has no source -> swept; it drives the early-sowing break-even.
+
 ## 01/11/2026 — CORE B RESULTS (protocol-v1; scripts/run_core_b.py; results/core_b/)
 - Run: 250 model fits, 31.8 min on 12 workers, seed 20261101, B = 2000; `--check` passes; pooled MAE and coverage
   recomputed independently from predictions.csv and match. Test: 2024-2026, 27 issue dates, 732 station-dekads,
