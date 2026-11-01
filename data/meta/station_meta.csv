@@ -1,0 +1,38 @@
+station,river,km_from_mouth,province_old,province_new,lat,lon,coord_source,sluice_status,sluice_basis
+Cát Lái,Sài Gòn,58.0,Hồ Chí Minh,TP Hồ Chí Minh,,,to_verify,outside,"both passes agree (reasoning, no boundary map)"
+Bến Lức,Vàm Cỏ Đông,67.0,Long An,Tây Ninh,,,to_verify,to_verify,passes disagree or unknown
+Xuân Khánh,Vàm Cỏ Đông,95.0,Long An,Tây Ninh,,,to_verify,outside,"both passes agree (reasoning, no boundary map)"
+Tân An,Vàm Cỏ Tây,80.0,Long An,Tây Ninh,,,to_verify,outside,"both passes agree (reasoning, no boundary map)"
+Tuyên Nhơn,Vàm Cỏ Tây,120.0,Long An,Tây Ninh,,,to_verify,outside,"both passes agree (reasoning, no boundary map)"
+Vàm Kênh,Cửa Tiểu,2.0,Tiền Giang,Đồng Tháp,10.2721,106.7367,"Zenodo 20003854 Mekong_Station_Metadata.csv (Nguyen D.Q.H. et al. 2026, CC BY-4.0), station point; not stated whether surveyed gauge or digitised",to_verify,passes disagree or unknown
+Hòa Bình,Cửa Tiểu,18.0,Tiền Giang,Đồng Tháp,10.2883,106.5922,"Zenodo 20003854 Mekong_Station_Metadata.csv (Nguyen D.Q.H. et al. 2026, CC BY-4.0), station point; not stated whether surveyed gauge or digitised",outside,"both passes agree (reasoning, no boundary map)"
+An Định,Tiền,48.0,Tiền Giang,Đồng Tháp,10.3127,106.4298,"Zenodo 20003854 Mekong_Station_Metadata.csv (Nguyen D.Q.H. et al. 2026, CC BY-4.0), station point; not stated whether surveyed gauge or digitised",outside,"both passes agree (reasoning, no boundary map)"
+Bình Đại,Cửa Đại,4.0,Bến Tre,Vĩnh Long,10.2095,106.7094,"Zenodo 20003854 Mekong_Station_Metadata.csv (Nguyen D.Q.H. et al. 2026, CC BY-4.0), station point; not stated whether surveyed gauge or digitised",outside,"both passes agree (reasoning, no boundary map)"
+Lộc Thuận,Cửa Đại,18.0,Bến Tre,Vĩnh Long,10.2456,106.603,"Zenodo 20003854 Mekong_Station_Metadata.csv (Nguyen D.Q.H. et al. 2026, CC BY-4.0), station point; not stated whether surveyed gauge or digitised",outside,"both passes agree (reasoning, no boundary map)"
+An Thuận,Hàm Luông,10.0,Bến Tre,Vĩnh Long,9.9768,106.5999,"Zenodo 20003854 Mekong_Station_Metadata.csv (Nguyen D.Q.H. et al. 2026, CC BY-4.0), station point; not stated whether surveyed gauge or digitised",outside,"both passes agree (reasoning, no boundary map)"
+Sơn Đốc,Hàm Luông,20.0,Bến Tre,Vĩnh Long,10.0285,106.5,"Zenodo 20003854 Mekong_Station_Metadata.csv (Nguyen D.Q.H. et al. 2026, CC BY-4.0), station point; not stated whether surveyed gauge or digitised",outside,"both passes agree (reasoning, no boundary map)"
+Bến Trại,Cổ Chiên (cửa Cổ Chiên),10.0,Bến Tre,Vĩnh Long,9.8839,106.5236,"Zenodo 20003854 Mekong_Station_Metadata.csv (Nguyen D.Q.H. et al. 2026, CC BY-4.0), station point; not stated whether surveyed gauge or digitised",outside,"both passes agree (reasoning, no boundary map)"
+Hương Mỹ,Cổ Chiên (cửa Cổ Chiên),25.0,Bến Tre,Vĩnh Long,9.9864,106.3776,"Zenodo 20003854 Mekong_Station_Metadata.csv (Nguyen D.Q.H. et al. 2026, CC BY-4.0), station point; not stated whether surveyed gauge or digitised",outside,"both passes agree (reasoning, no boundary map)"
+Hưng Mỹ,Cổ Chiên (cửa Cung Hầu),17.0,Trà Vinh,Vĩnh Long,9.8848,106.4492,"Zenodo 20003854 Mekong_Station_Metadata.csv (Nguyen D.Q.H. et al. 2026, CC BY-4.0), station point; not stated whether surveyed gauge or digitised",outside,"both passes agree (reasoning, no boundary map)"
+Cầu Quan,Hậu (cửa Định An),32.0,Trà Vinh,Vĩnh Long,9.7561,106.1119,"Zenodo 20003854 Mekong_Station_Metadata.csv (Nguyen D.Q.H. et al. 2026, CC BY-4.0), station point; not stated whether surveyed gauge or digitised",outside,"both passes agree (reasoning, no boundary map)"
+Trà Vinh,Cổ Chiên (cửa Cung Hầu),28.0,Trà Vinh,Vĩnh Long,9.9774,106.3558,"Zenodo 20003854 Mekong_Station_Metadata.csv (Nguyen D.Q.H. et al. 2026, CC BY-4.0), station point; not stated whether surveyed gauge or digitised",outside,"both passes agree (reasoning, no boundary map)"
+Trà Kha,Hậu (cửa Định An),7.0,Trà Vinh,Vĩnh Long,9.645,106.2251,"Zenodo 20003854 Mekong_Station_Metadata.csv (Nguyen D.Q.H. et al. 2026, CC BY-4.0), station point; not stated whether surveyed gauge or digitised",outside,"both passes agree (reasoning, no boundary map)"
+Long Phú,Hậu (cửa Trần Đề),15.0,Sóc Trăng,Cần Thơ,9.6143,106.1506,"Zenodo 20003854 Mekong_Station_Metadata.csv (Nguyen D.Q.H. et al. 2026, CC BY-4.0), station point; not stated whether surveyed gauge or digitised",outside,"both passes agree (reasoning, no boundary map)"
+Đại Ngãi,Hậu (cửa Tranh Đề),35.0,Sóc Trăng,Cần Thơ,9.7288,106.131,"Zenodo 20003854 Mekong_Station_Metadata.csv (Nguyen D.Q.H. et al. 2026, CC BY-4.0), station point; not stated whether surveyed gauge or digitised",outside,"both passes agree (reasoning, no boundary map)"
+Trần Đề,Hậu,10.0,Sóc Trăng,Cần Thơ,9.5294,106.2038,"Zenodo 20003854 Mekong_Station_Metadata.csv (Nguyen D.Q.H. et al. 2026, CC BY-4.0), station point; not stated whether surveyed gauge or digitised",outside,"both passes agree (reasoning, no boundary map)"
+Thạnh Phú,K. Như Gia,Nội đồng,Sóc Trăng,Cần Thơ,,,to_verify,to_verify,passes disagree or unknown
+Sóc Trăng,K. Maspero,Nội đồng,Sóc Trăng,Cần Thơ,,,to_verify,to_verify,passes disagree or unknown
+Gành Hào,Gành Hào,2.0,Bạc Liêu,Cà Mau,,,to_verify,to_verify,passes disagree or unknown
+Sông Đốc,Sông Đốc,1.5,Cà Mau,Cà Mau,,,to_verify,outside,"both passes agree (reasoning, no boundary map)"
+Rạch Giá,Kiên,7.0,Kiên Giang,An Giang,,,to_verify,to_verify,passes disagree or unknown
+Gò Quao,Cái Lớn,35.0,Kiên Giang,An Giang,,,to_verify,inside,"both passes agree (reasoning, no boundary map)"
+An Ninh,Cái Bé,8.0,Kiên Giang,An Giang,,,to_verify,to_verify,passes disagree or unknown
+Cầu Nổi,Vàm Cỏ,20.0,Long An,Tây Ninh (inferred),,,to_verify,to_verify,passes disagree or unknown
+Xẻo Rô,Cái Lớn,7.0,Kiên Giang,An Giang,,,to_verify,boundary,"both passes agree (reasoning, no boundary map)"
+Mỹ Tho,Tiền,55.0,Tiền Giang,Đồng Tháp,10.3485,106.3791,"Zenodo 20003854 Mekong_Station_Metadata.csv (Nguyen D.Q.H. et al. 2026, CC BY-4.0), station point; not stated whether surveyed gauge or digitised",outside,"both passes agree (reasoning, no boundary map)"
+Đồng Tâm,Tiền,63.0,Tiền Giang,Đồng Tháp,10.3336,106.3458,"Zenodo 20003854 Mekong_Station_Metadata.csv (Nguyen D.Q.H. et al. 2026, CC BY-4.0), station point; not stated whether surveyed gauge or digitised",outside,"both passes agree (reasoning, no boundary map)"
+Cà Mau,Gành Hào,Nội đồng,Cà Mau,Cà Mau,,,to_verify,to_verify,passes disagree or unknown
+Xuân Hòa,Cửa Tiểu,,"Tiền Giang (inferred, unverified)",Đồng Tháp (inferred),,,to_verify,to_verify,passes disagree or unknown
+Giao Hòa,Cửa Đại,,"Bến Tre (inferred, unverified)",Vĩnh Long (inferred),,,to_verify,to_verify,passes disagree or unknown
+Mỹ Hóa,Hàm Luông,,Bến Tre (inferred),Vĩnh Long (inferred),10.2105,106.3541,"Zenodo 20003854 Mekong_Station_Metadata.csv (Nguyen D.Q.H. et al. 2026, CC BY-4.0), station point; not stated whether surveyed gauge or digitised",to_verify,passes disagree or unknown
+Láng Thé,Cổ Chiên,,"Trà Vinh (inferred, unverified)",Vĩnh Long (inferred),,,to_verify,to_verify,passes disagree or unknown
