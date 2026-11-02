@@ -13,7 +13,7 @@ OUT = ROOT / "manuscript" / "tables"
 
 
 def ci(est, lo, hi, nd=3):
-    return f"{est:.{nd}f} [{lo:.{nd}f}, {hi:.{nd}f}]"
+    return f"{est:.{nd}f} [{lo:.{nd}f}, {hi:.{nd}f}]".replace("-", "$-$")
 
 
 def write(name, caption, label, colspec, header, rows, note=""):
@@ -22,8 +22,9 @@ def write(name, caption, label, colspec, header, rows, note=""):
     tex = (
         "\\begin{table}[htbp]\n\\centering\\small\n"
         f"\\caption{{{caption}}}\\label{{{label}}}\n"
+        "\\begin{adjustbox}{max width=\\textwidth}\n"
         f"\\begin{{tabular}}{{{colspec}}}\n\\toprule\n{header} \\\\\n\\midrule\n{body}\n\\bottomrule\n"
-        f"\\end{{tabular}}{note_tex}\n\\end{{table}}\n"
+        f"\\end{{tabular}}\n\\end{{adjustbox}}{note_tex}\n\\end{{table}}\n"
     )
     (OUT / name).write_text(tex, encoding="utf-8")
 
@@ -62,7 +63,7 @@ def core_verdicts():
     rows.append(["", "\\textit{Verdicts}", "", "H1 no; H2a yes; H2b no; H3 yes", "H1 no; H2a no; H2b no; H3 yes"])
     write(
         "tab_core_verdicts.tex",
-        "Pre-registered core-B criteria (protocol-v1), test seasons 2024--2026 pooled (27 issue dates, "
+        "Core-B criteria of the frozen protocol (protocol-v1), test seasons 2024--2026 pooled (27 issue dates, "
         "732 station-dekads). Estimates with paired-bootstrap 95\\% CIs (issue dates resampled within seasons, "
         "2,000 resamples). MAE in g/L; Brier and coverage unitless. HGB: gradient-boosted quantile regression; "
         "QR: linear quantile regression.",
@@ -134,25 +135,25 @@ def h4():
         r = d[(d.variant == v) & (d.group == grp) & (d.metric == met)].iloc[0]
         return ci(r.estimate, r.ci_lo, r.ci_hi)
 
-    mets = ["area_regret_reduction_vs_fixed", "area_regret_reduction_vs_clim",
-            "area_rev_fc_vs_fixed", "area_rev_fc_vs_clim"]
-    rows = []
-    # Per field type only; no inside-minus-outside difference is reported (protocol D5).
-    for grp, lab in [("gated", "Inside sluice systems"), ("ungated", "Outside sluice systems")]:
-        rows.append(["Main (D4)", lab] + [c("main", grp, m) for m in mets])
-    for v, lab in [("Dsev_Le_8.3", "$\\Delta_{\\mathrm{sev}}=8.3$"), ("cap10", "$S$ cap 10 g/L"),
-                   ("cap20", "$S$ cap 20 g/L"), ("target_upper_tercile", "Upper-tercile target")]:
-        rows.append([lab, "Outside sluice systems"] + [c(v, "ungated", m) for m in mets])
+    # Main setting only (D4 loss model, ungated slope); one row per comparison. No field-type rows (owner, 02/11/2026).
+    rows = [
+        ["Forecast vs fixed calendar", c("main", "ungated", "area_regret_reduction_vs_fixed"),
+         c("main", "ungated", "area_rev_fc_vs_fixed")],
+        ["Forecast vs climatology", c("main", "ungated", "area_regret_reduction_vs_clim"),
+         c("main", "ungated", "area_rev_fc_vs_clim")],
+        ["Climatology vs fixed calendar", "--", c("main", "ungated", "area_rev_clim_vs_fixed")],
+    ]
     write(
         "tab_h4.tex",
         "H4: value of the severe-season forecast for the early-sowing decision (scenario analysis, not farm "
-        "advice). Areas over C/L 0.1--0.9 of the regret reduction (M VND ha$^{-1}$ $\\times$ C/L, 2025 VND) and of "
-        "the relative economic value (REV), forecast against the fixed calendar and against climatology. "
-        "95\\% CIs from 2,000 season resamples; 70 station-seasons.",
-        "tab:h4", "@{}p{2.6cm}p{2.4cm}llll@{}",
-        "Setting & Fields & Regret red. vs fixed & vs climatology & REV vs fixed & REV vs clim.", rows,
-        "Sensitivity rows are shown for fields outside sluice systems; all settings for both field types are in "
-        "results/layer\\_a\\_decision/bootstrap\\_ci.csv.")
+        "advice), main setting. Areas over C/L 0.1--0.9 of the regret reduction (M VND ha$^{-1}$ $\\times$ C/L, "
+        "2025 VND) and of the relative economic value (REV). 95\\% CIs from 2,000 season resamples; "
+        "70 station-seasons.",
+        "tab:h4", "@{}lll@{}",
+        "Comparison & Regret reduction & REV area", rows,
+        "Main setting: loss model D4 with the profit slope of \\citet{le2025size} for fields outside sluice "
+        "systems, salinity capped at 14 g/L, $\\Delta_{\\mathrm{sev}}=10.1$ M VND ha$^{-1}$. H4 (a) and (b) "
+        "require the regret-reduction CI above 0.")
 
 
 def data_sources():
@@ -183,6 +184,6 @@ if __name__ == "__main__":
     txt = "".join(p.read_text(encoding="utf-8") for p in OUT.glob("tab_*.tex"))
     for must in ["0.923 [0.898, 0.949]", "0.129 [0.052, 0.211]", "-0.022 [-0.129, 0.084]",
                  "0.253 [-0.023, 0.490]", "1.564 [0.068, 3.064]"]:
-        assert must in txt, must
+        assert must.replace("-", "$-$") in txt, must
     assert "ungated_minus_gated" not in txt and "minus" not in txt.lower().replace("$-$", "")
     print("wrote", sorted(p.name for p in OUT.glob("tab_*.tex")))

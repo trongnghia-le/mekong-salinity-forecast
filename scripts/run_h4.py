@@ -289,26 +289,16 @@ def pan(ax, s):
 
 
 def fig07():
-    fig, axs = plt.subplots(1, 2, figsize=(190 * MM, 70 * MM), sharey=True)
-    lit = D_FERRER * 0 + 4.2 / (D_FERRER + 4.2)       # C/L at m = -4.2
-    for ax, (vn, lines, ttl) in zip(axs, [("main", [("both fields", BLUE, "gated")], "D4 loss model (gated = ungated)"),
-                                         ("FAO_f0.5", [("outside gates", BLUE, "ungated"), ("inside gates", ORANGE, "gated")],
-                                          "FAO curve, exposure f = 0.5 (gated 0.1)")]):
-        ax.axvspan(0, lit, color="#eceae4", lw=0)
-        for lab, col, grp in lines:
-            d = revdf[(revdf.variant == vn) & (revdf.group == grp)]
-            if d.rev_fc_vs_fixed.isna().all():     # no recoverable loss -> REV undefined
-                ax.text(0.97, 0.66, f"{lab}: REV undefined\n(no recoverable loss)", transform=ax.transAxes, ha="right", fontsize=6.5, color=col)
-                continue
-            ax.fill_between(d.C_L, d.rev_fc_vs_fixed_lo, d.rev_fc_vs_fixed_hi, color=col, alpha=.15, lw=0)
-            ax.plot(d.C_L, d.rev_fc_vs_fixed, color=col, lw=1.4, marker="o", ms=3, label=f"Forecast, {lab}")
-            ax.plot(d.C_L, d.rev_clim_vs_fixed, color=col, lw=1.0, ls="--", marker="v", ms=3, mfc="white", label=f"Climatology, {lab}")
-        ax.axhline(0, color=GREY, lw=.6)
-        ax.set_xlabel("Cost/loss ratio C/L"); ax.set_title(ttl); ax.set_ylim(-0.6, 1.0)
-        ax.legend(frameon=False, loc="upper right", fontsize=6.5)
-    axs[0].set_ylabel("Relative economic value vs fixed calendar")
-    axs[0].text(lit / 2, -0.45, "literature\nC/L range", ha="center", va="top", fontsize=6, color=MUTED if False else "#52514e")
-    pan(axs[0], "a"); pan(axs[1], "b")
+    fig, ax = plt.subplots(figsize=(90 * MM, 70 * MM))
+    d = revdf[(revdf.variant == "main") & (revdf.group == "ungated")]
+    ax.fill_between(d.C_L, d.rev_fc_vs_fixed_lo, d.rev_fc_vs_fixed_hi, color=BLUE, alpha=.15, lw=0)
+    ax.fill_between(d.C_L, d.rev_clim_vs_fixed_lo, d.rev_clim_vs_fixed_hi, color=ORANGE, alpha=.12, lw=0)
+    ax.plot(d.C_L, d.rev_fc_vs_fixed, color=BLUE, lw=1.4, marker="o", ms=3, label="Forecast")
+    ax.plot(d.C_L, d.rev_clim_vs_fixed, color=ORANGE, lw=1.0, ls="--", marker="v", ms=3, mfc="white", label="Climatology")
+    ax.axhline(0, color=GREY, lw=.6)
+    ax.set_xlabel("Cost/loss ratio C/L"); ax.set_ylim(-0.6, 1.0)
+    ax.set_ylabel("Relative economic value vs fixed calendar")
+    ax.legend(frameon=False, loc="upper right", fontsize=6.5)
     save(fig, "fig07_h4_value")
 
 
@@ -355,17 +345,15 @@ def fig08():
     axh.set_xlabel("Forecasts (n = 70)"); axh.grid(False)
     plt.setp(axh.get_yticklabels(), visible=False); axh.tick_params(left=False)
     kk = np.linspace(*K_RANGE, 41)
-    for grp, col in (("gated", BLUE), ("ungated", ORANGE)):
-        for yg, ls in ((True, "-"), (False, "--")):
-            ax3.plot(kk, [stv_pstar(grp, k, yg) for k in kk], color=col, ls=ls, lw=1.4,
-                     label=f"{'inside' if grp == 'gated' else 'outside'} gates, {'with' if yg else 'no'} yield gain")
+    for yg, ls, lab in ((True, "-", "with +364 kg/ha yield gain"), (False, "--", "without yield gain")):
+        ax3.plot(kk, [stv_pstar("ungated", k, yg) for k in kk], color=BLUE, ls=ls, lw=1.4, label=lab)
     ax3.axhspan(1, 1.6, color="#eceae4", lw=0); ax3.axhspan(-0.4, 0, color="#eceae4", lw=0)
     ax3.text(0.41, 1.45, "standard rice better at any P", ha="center", va="center", fontsize=6.2, color="#52514e")
     ax3.text(0.41, -0.3, "salt-tolerant variety better at any P", ha="center", va="center", fontsize=6.2, color="#52514e")
     ax3.set_ylim(-0.4, 1.6); ax3.set_xlim(*K_RANGE)
-    ax3.set_xlabel("Salt-tolerant variety loss scaling, k"); ax3.set_ylabel("Break-even P(severe), standard vs variety\n(inside gates, no yield gain: p* > 4, off scale)")
+    ax3.set_xlabel("Salt-tolerant variety loss scaling, k"); ax3.set_ylabel("Break-even P(severe), standard vs variety")
     ax3.yaxis.set_label_position("right"); ax3.yaxis.tick_right()
-    ax3.legend(frameon=False, loc="lower right", bbox_to_anchor=(1.0, .21), fontsize=6)
+    ax3.legend(frameon=False, loc="lower right", bbox_to_anchor=(1.0, .21), fontsize=6.5)
     ax3.set_title("Skipping the season is dominated\nin all settings", fontsize=6.5, color="#52514e")
     pan(ax, "a"); pan(ax3, "b")
     save(fig, "fig08_breakeven")

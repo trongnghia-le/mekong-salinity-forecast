@@ -64,6 +64,58 @@
 - Live download with TLS verification off was denied by the Claude Code classifier ([TLS/Auth Weaken]).
 - Conclusion: JPG transcription cannot fill the Dec-Feb gaps; option 2 dropped.
 
+## 02/11/2026 — Manuscript draft v1 (after novelty edits; ready for internal review)
+- main.pdf 39 pages, compiles cleanly; abstract 238 words; whole document 8,239 words (texcount incl. captions,
+  tables, declarations) -> trim to ~8,000 before submission. references.bib 54 entries, all verified.
+- "Pre-registered" replaced by "protocol frozen before scoring" + Methods sentence (tag protocol-v1, commit 1d72a22,
+  public repo; test bulletins were public before the freeze). Conformal claim narrowed; Nguyen H.T.T. et al. 2026
+  (Zenodo) cited. Highlights 67-84 characters; highlight 1 restored with "28 Mekong Delta stations".
+- fig07 single panel (D4 main setting); fig08 panel b without field-type lines; captions synced.
+- 9 \todo left: fig00 map; rerun citing-paper searches; Apel 2020 comparison; optional intervals around the
+  official forecast; limitations after fig00; CRediT; competing interests; AI declaration; acknowledgements.
+
+## 02/11/2026 — Novelty re-check (docs/background/novelty_recheck_2026-11-02.md; 168 searches)
+- Claims 1 (benchmark vs official NCHMF), 3 (economic value vs deterministic official), 4 (severe-season forecast +
+  sowing break-even), 5 (frozen protocol) hold as search-scope statements. Claim 2 (conformal) must be narrowed to
+  "evaluated at withheld stations/provinces": Nguyen H.T.T., Tran, Le (Zenodo doi:10.5281/zenodo.23497554, 20/10/2026;
+  verified) reconstruct daily peak salinity at 34 stations (Bến Tre, Trà Vinh, Vĩnh Long, 2016-17 to 2024-25) with
+  cross-conformal 90% intervals (gap-filling, no station-out test). NEW COMPETITOR (HCMUNRE contact): holds 34-station
+  daily data 2016-2025 - a forecasting paper is their likely next step. Submit soon.
+- Fixes: "one or a few stations" wrong (le2025salinity: 44); "public benchmark" -> "built from public bulletins";
+  "pre-registered" -> "protocol frozen before scoring" (GitHub repo is public; tag protocol-v1 visible, verified via
+  API 02/11/2026). Must-cite additions listed in the re-check file.
+- Not completed: OpenAlex citing-paper checks (free quota exhausted; key needs email - not allowed), Semantic Scholar
+  refused, IGES page 403. Rerun citing-paper checks right before submission.
+
+## 02/11/2026 — DECISIONS (owner) on draft v0
+- Remove every inside/outside sluice comparison of forecast value (incl. tab_h4 gated row) - consistent with D5.
+- Title must contain "Mekong" and "Vietnam": "Probabilistic dekadal salinity forecasts for the Mekong Delta, Vietnam:
+  calibration at unseen stations and economic value relative to the official forecast".
+- Abstract trimmed to <= 240 words. CRediT: Nghĩa (conceptualization ... original draft); Hiếu, Nam (data curation:
+  station coordinates; validation; review & editing); Bảo (supervision; review & editing) - to confirm.
+- Owner wants the AI declaration as "analysis support only". Not applied yet: the current text was drafted with AI;
+  the declaration must match the final text after the authors revise it (Elsevier policy). Methods states AI-assisted
+  code with author verification. Decide after revision.
+- Novelty re-check (thorough) started before submission -> docs/background/novelty_recheck_2026-11-02.md.
+
+## 02/11/2026 — Manuscript draft v0 (manuscript/, gitignored; never push)
+- elsarticle [review,authoryear]; main.tex only \input's sections/ (abstract, highlights, practical_implications,
+  01-07, declarations), figures/ (fig01-fig08), tables/ (5 tables from scripts/make_tables.py, aggregated scores only).
+  Compiles with MiKTeX: main.pdf 35 pages; cover_letter.pdf 1 page; cover_letter.docx built from the advisor's template
+  (generator: manuscript/make_cover_letter.py).
+- Words: main text 6,430 (Introduction-Conclusions); whole file 7,919; abstract 251 (check the 250 limit);
+  Practical implications 591 (guide snippet: <= 1,200, placed after the abstract; guide page 403 - re-check live).
+- references.bib: 35 entries, all DOIs verified on Crossref 02/11/2026 (no email). Check: "Duc et al." (Phong Nguyen Duc
+  2025) surname handling; Le Phuong-Dung key le2025size.
+- H4 part (c) absent everywhere (grep: no 0.037 / "(c)"); pre-registration paragraph lists D1-D4 and refers to D5 only
+  as "reporting scope of H4". tab_h4 still shows inside and outside rows (1.527 vs 1.564) -> owner to decide.
+- Open: fig00 study-area map; repository URL; Apel 2020 comparison; CRediT, competing interests, generative-AI
+  declaration wording (owner); 10 \citetodo (GloFAS v4/Open-Meteo, ONI, Meeus, GFZ and Mendeley DataCite DOIs,
+  World Bank CPI, scikit-learn, Romano 2019, FAO 29, threshold source).
+- Title note: "unmonitored stations" overstates the leave-station-out test (current-dekad value still a predictor).
+- Numbers traced to results files; three not in these notes come from results/core_b/bootstrap_ci.csv (HGB mean
+  interval width 9.72 g/L; QR 2024 width 121 g/L; leave-province-out transfer cost +0.242).
+
 ## 02/11/2026 — fig08 redrawn (scripts/run_h4.py fig08(); caption replaced)
 - Panel a: break-even P(severe) p* = -m/(Delta_sev - m) vs the unknown mild-season effect m (-10..+5 M VND/ha),
   Ferrer 10.1 and Le 8.3; identical for gated and ungated (constant Delta), so one panel. p* at m = -2: 0.165 / 0.194
