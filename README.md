@@ -216,5 +216,6 @@ It will be published on GitHub Pages when the paper is published.
 Please cite the article once it is published; this README will be updated with the reference. Until then, cite
 this repository and the commit you used.
 
-Data keep their source licences (see the table above). Files derived from the ODV CSV are CC BY-SA 4.0, and
-coordinates derived from OpenStreetMap are ODbL. No licence has yet been chosen for the code in this repository.
+**Code** (`scripts/`, `atlas/`) is released under the [MIT License](LICENSE). **Data** keep their source licences
+(see the table above). In particular, files derived from the ODV CSV are CC BY-SA 4.0, and coordinates derived from
+OpenStreetMap are ODbL. The MIT License does not cover third-party data.
