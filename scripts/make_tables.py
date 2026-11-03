@@ -18,9 +18,11 @@ def ci(est, lo, hi, nd=3):
 
 def write(name, caption, label, colspec, header, rows, note=""):
     body = "\n".join(" & ".join(r) + r" \\" for r in rows)
-    note_tex = f"\n\\par\\smallskip\\footnotesize {note}" if note else ""
+    # left-aligned paragraph columns (justified p{} columns left wide gaps between words; needs \usepackage{array})
+    colspec = colspec.replace("p{", ">{\\raggedright\\arraybackslash}p{")
+    note_tex = f"\n\\par\\smallskip{{\\raggedright\\footnotesize {note}\\par}}" if note else ""
     tex = (
-        "\\begin{table}[htbp]\n\\centering\\small\n"
+        "\\begin{table}[!htb]\n\\centering\\small\n"
         f"\\caption{{{caption}}}\\label{{{label}}}\n"
         "\\begin{adjustbox}{max width=\\textwidth}\n"
         f"\\begin{{tabular}}{{{colspec}}}\n\\toprule\n{header} \\\\\n\\midrule\n{body}\n\\bottomrule\n"
@@ -98,6 +100,42 @@ def core_seasons():
         "Season & $n$ & $\\bar o_4$ & MAE HGB & QR & MAE official & Pers. & Clim. & CQR & REV HGB & REV off.",
         rows,
         "$n$: station-dekads; $\\bar o_4$: base rate of $S_{\\max}>4$ g/L. Rounded to 2 (MAE) or 3 decimals.")
+
+
+def core_metrics():
+    """Appendix table: CRPS and Brier / hit rate / false-alarm rate / PSS at 1, 2, 4 g/L, forward design, pooled."""
+    cols = [("hgb", "model"), ("qr", "model"), ("hgb", "official"), ("hgb", "persist"), ("hgb", "clim")]
+
+    rows = []
+
+    def add(label, metric_of):  # estimate with CI in small type; "--" where the forecast has no such score
+        cells = []
+        for m, f in cols:
+            k = metric_of(f)
+            r = g("forward", m, "pooled", k) if k else None
+            cells.append("--" if r is None else
+                         f"{r.estimate:.3f} {{\\footnotesize [{r.ci_lo:.3f}, {r.ci_hi:.3f}]}}".replace("-", "$-$"))
+        rows.append([label] + cells)
+
+    add("CRPS (g/L)", lambda f: "crps_model" if f == "model" else None)
+    names = [("Brier score", "brier_{f}_{c}"), ("Hit rate", "hit_rate_{f}_{c}"),
+             ("False-alarm rate", "far_{f}_{c}"), ("Peirce skill score", "pss_{f}_{c}")]
+    for c in (1, 2, 4):
+        br = g("forward", "hgb", "pooled", f"base_rate_{c}").estimate
+        rows.append([f"\\multicolumn{{6}}{{@{{}}l}}{{\\textit{{{c} g/L (base rate {br:.2f})}}}}"])
+        for label, pat in names:
+            add(label, lambda f, pat=pat, c=c: pat.format(f=f, c=c))
+    write(
+        "tab_metrics.tex",
+        "Verification scores of all forecasts, forward design, test seasons 2024--2026 pooled (732 "
+        "station-dekads), with paired-bootstrap 95\\% CIs (2,000 resamples). Thresholds 1, 2 and 4 g/L.",
+        "tab:metrics", "@{}lccccc@{}",
+        "Score & HGB & QR & Official & Persistence & Climatology", rows,
+        "CRPS from the conformalized quantile grid; the official forecast, persistence and station climatology "
+        "are deterministic (no CRPS; Brier score of the 0/1 forecast). Yes/no forecasts: HGB and QR when the "
+        "exceedance probability exceeds a threshold chosen on training data, the others when the value exceeds "
+        "the threshold. False-alarm rate: false alarms divided by non-events, so Peirce skill score = hit rate "
+        "$-$ false-alarm rate. The official forecast is scored on the test rows where it exists.")
 
 
 # ---------- layer A ----------
@@ -179,7 +217,7 @@ def data_sources():
 
 if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)
-    core_verdicts(); core_seasons(); layer_a(); h4(); data_sources()
+    core_verdicts(); core_seasons(); core_metrics(); layer_a(); h4(); data_sources()
     # self-check: tables hold no per-row NCHMF fields and carry the frozen headline numbers
     txt = "".join(p.read_text(encoding="utf-8") for p in OUT.glob("tab_*.tex"))
     for must in ["0.923 [0.898, 0.949]", "0.129 [0.052, 0.211]", "-0.022 [-0.129, 0.084]",

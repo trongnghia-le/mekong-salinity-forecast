@@ -1,0 +1,38 @@
+﻿station,lat,lon,coord_source,coord_quality
+Cát Lái,10.75145,106.78201,OpenStreetMap (ODbL): Sông Đồng Nai nearest to Phường Cát Lái,approximate (river point nearest the named locality)
+Bến Lức,10.6406,106.47441,OpenStreetMap (ODbL): Sông Vàm Cỏ Đông nearest to Xã Bến Lức,approximate (river point nearest the named locality)
+Xuân Khánh,10.82368,106.38666,OpenStreetMap (ODbL): Sông Vàm Cỏ Đông nearest to Ấp Xuân Khánh,approximate (river point nearest the named locality)
+Tân An,10.5509813,106.3747789,Google Maps (Nam),checked
+Tuyên Nhơn,10.65869,106.19074,OpenStreetMap (ODbL): Sông Vàm Cỏ Tây nearest to Cầu Tuyên Nhơn,approximate (river point nearest the named locality)
+Vàm Kênh,10.27527689,106.7377838,"Google Maps (Nam), chosen by Hiếu/Nam over the published point",checked
+Hòa Bình,10.29061038,106.5911928,"Google Maps (Hiếu/Nam), corrected point",checked
+An Định,10.3127,106.4298,"Zenodo 10.5281/zenodo.20003854 (Nguyen D.Q.H. et al. 2026, CC BY 4.0)","published, approximate"
+Bình Đại,10.197028,106.711222,"Zenodo 10.5281/zenodo.23497554 (Nguyen H.T.T. et al. 2026, CC BY 4.0), nguồn gốc: Station forms (SRHMC)","published, approximate"
+Lộc Thuận,10.243056,106.6,"Zenodo 10.5281/zenodo.23497554 (Nguyen H.T.T. et al. 2026, CC BY 4.0), nguồn gốc: Station forms (SRHMC)","published, approximate"
+An Thuận,9.976389,106.605222,"Zenodo 10.5281/zenodo.23497554 (Nguyen H.T.T. et al. 2026, CC BY 4.0), nguồn gốc: Station forms (SRHMC)","published, approximate"
+Sơn Đốc,10.054167,106.463889,"Zenodo 10.5281/zenodo.23497554 (Nguyen H.T.T. et al. 2026, CC BY 4.0), nguồn gốc: Station forms (SRHMC)","published, approximate"
+Bến Trại,9.880889,106.529,"Zenodo 10.5281/zenodo.23497554 (Nguyen H.T.T. et al. 2026, CC BY 4.0), nguồn gốc: Station forms (SRHMC)","published, approximate"
+Hương Mỹ,9.980556,106.388889,"Zenodo 10.5281/zenodo.23497554 (Nguyen H.T.T. et al. 2026, CC BY 4.0), nguồn gốc: Station forms (SRHMC)","published, approximate"
+Hưng Mỹ,9.8848,106.4492,"Zenodo 10.5281/zenodo.20003854 (Nguyen D.Q.H. et al. 2026, CC BY 4.0)","published, approximate"
+Cầu Quan,9.7561,106.1119,"Zenodo 10.5281/zenodo.20003854 (Nguyen D.Q.H. et al. 2026, CC BY 4.0)","published, approximate"
+Trà Vinh,9.9774,106.3558,"Zenodo 10.5281/zenodo.20003854 (Nguyen D.Q.H. et al. 2026, CC BY 4.0)","published, approximate"
+Trà Kha,9.645,106.2251,"Zenodo 10.5281/zenodo.20003854 (Nguyen D.Q.H. et al. 2026, CC BY 4.0)","published, approximate"
+Long Phú,9.6143,106.1506,"Zenodo 10.5281/zenodo.20003854 (Nguyen D.Q.H. et al. 2026, CC BY 4.0)","published, approximate"
+Đại Ngãi,9.734356059,106.0739702,"Google Maps (Nam), chosen by Hiếu/Nam over the published point",checked
+Trần Đề,9.5294,106.2038,"Zenodo 10.5281/zenodo.20003854 (Nguyen D.Q.H. et al. 2026, CC BY 4.0)","published, approximate"
+Thạnh Phú,9.502343,105.850957,OpenStreetMap (ODbL): locality Thạnh Phú (K. Như Gia not in OSM),approximate (locality)
+Sóc Trăng,9.60819,105.96782,OpenStreetMap (ODbL): Sông Maspero nearest to Sóc Trăng,approximate (river point nearest the named locality)
+Gành Hào,9.02737,105.41709,OpenStreetMap (ODbL): Sông Gành Hào nearest to Gành Hào,approximate (river point nearest the named locality)
+Sông Đốc,9.041589565,104.833188,Google Maps (Nam),checked
+Rạch Giá,10.01226,105.0833,OpenStreetMap (ODbL): Sông Kiên nearest to Rạch Giá,approximate (river point nearest the named locality)
+Gò Quao,9.72578,105.27408,OpenStreetMap (ODbL): Sông Cái Lớn nearest to Gò Quao,approximate (river point nearest the named locality)
+An Ninh,9.86057,105.13134,OpenStreetMap (ODbL): Sông Cái Bé nearest to An Ninh,approximate (river point nearest the named locality)
+Cầu Nổi,,,,
+Xẻo Rô,9.864857641,105.1111433,Google Maps (Nam),checked
+Mỹ Tho,10.3485,106.3791,"Zenodo 10.5281/zenodo.20003854 (Nguyen D.Q.H. et al. 2026, CC BY 4.0)","published, approximate"
+Đồng Tâm,10.3336,106.3458,"Zenodo 10.5281/zenodo.20003854 (Nguyen D.Q.H. et al. 2026, CC BY 4.0)","published, approximate"
+Cà Mau,9.17712,105.1464,OpenStreetMap (ODbL): Sông Gành Hào nearest to Cà Mau,approximate (river point nearest the named locality)
+Xuân Hòa,,,,
+Giao Hòa,10.29736,106.44057,"Zenodo 10.5281/zenodo.23497554 (Nguyen H.T.T. et al. 2026, CC BY 4.0), nguồn gốc: Georeferenced forecast map","published, approximate"
+Mỹ Hóa,10.218194,106.352278,"Zenodo 10.5281/zenodo.23497554 (Nguyen H.T.T. et al. 2026, CC BY 4.0), nguồn gốc: Station forms (SRHMC)","published, approximate"
+Láng Thé,,,,

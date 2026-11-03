@@ -23,6 +23,12 @@
 - **Không chắc thì để trống `lat` và `lon`**, ghi lý do vào `notes`. Tọa độ sai còn tệ hơn để trống.
 - Không lấy tọa độ từ ChatGPT, AI hay trí nhớ. Chỉ lấy từ điểm mình nhìn thấy trên bản đồ.
 - Không sửa các cột `station`, `river`, `km_from_mouth`, `province_old`.
+- **Chỉ lấy tọa độ từ Google Maps** (hệ WGS 84), kể cả khi web của trạm hay tài liệu Việt Nam ghi tọa độ khác. Tài
+  liệu Việt Nam thường dùng hệ VN-2000, lệch khoảng 225 m so với Google Maps; không trộn hai hệ trong một file. Thấy
+  số khác thì ghi nó vào `notes` (kèm nguồn), cột `lat`/`lon` vẫn là số Google Maps.
+- **Kiểm tra đúng tỉnh:** nhiều trạm trùng tên ở nơi khác (có "Trạm thủy văn Đồng Tâm" ở Quảng Bình). Trạm của mình
+  phải nằm ở tỉnh trong cột `province_old`, vĩ độ khoảng 8,5-11 (lat bắt đầu bằng 8, 9, 10 hoặc 11).
+- Ghi dạng số thập phân (`9.523889`), không ghi độ-phút-giây (`9° 31' 26"`).
 - Lưu file dạng **CSV UTF-8** (Excel: File > Save As > "CSV UTF-8") để không mất dấu tiếng Việt.
 
 Xong thì báo Nghĩa. Claude sẽ kiểm tra tọa độ có nằm trên đúng sông và khớp khoảng cách tới cửa sông không.

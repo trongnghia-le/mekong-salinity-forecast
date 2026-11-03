@@ -121,7 +121,7 @@
   Ferrer 10.1 and Le 8.3; identical for gated and ungated (constant Delta), so one panel. p* at m = -2: 0.165 / 0.194
   (77% / 76% of the 70 out-of-sample forecasts above); m = -4: 0.284 / 0.325 (70% / 66%); m = -10: ~0.50 / 0.55.
   m >= 0: early sowing never worse. Panel b: standard vs salt-tolerant variety vs k (0.2-0.6); at k 0.4 inside
-  gates with yield gain p* 0.99, outside without gain 0.58. Skipping dominated in all settings.
+  gates with yield gain p* 0.99, outside without gain 0.58 (0.57 after the 03/11 discount fix, see below). Skipping dominated in all settings.
 - To polish before submission: panel b legend lists an off-scale line and its right-hand axis label is crowded.
 
 ## 02/11/2026 — DECISIONS (owner)
@@ -191,7 +191,7 @@
   the first season), base rate 0.50. Unpenalised logistic, station dummies + ONI JAS, Tân Châu Sep-Oct Q, previous max.
 - Pooled BSS 0.253 [-0.023, 0.490] (recomputed: Brier 0.2035 vs climatology 0.2726), AUC 0.76 [0.60, 0.87].
   Cầu Quan BSS 0.40 [0.07, 0.68]; Sơn Đốc 0.39 [-0.02, 0.72]; Trà Vinh -0.01 [-0.48, 0.39] (no skill).
-  Skill NOT established at pooled level (CI includes 0; 96.6% of resamples > 0). Sensitivity (upper tercile; GloFAS
+  Skill NOT established at pooled level (CI includes 0; 96.7% of resamples > 0; bootstrap_ci.csv 0.9665, corrected 03/11 from 96.6%). Sensitivity (upper tercile; GloFAS
   predictor): pooled BSS 0.14-0.15, all CIs include 0.
 - Extension 2022, 2025 (bulletin lower bounds, n = 6): all severe; 2022 missed (p 0.11-0.23), 2025 Sơn Đốc caught
   (0.91), Cầu Quan/Trà Vinh ~0.5. Anecdotal. extension.csv holds bulletin-derived maxima -> gitignored.
@@ -363,3 +363,152 @@
 - Licence: GloFAS (Copernicus EMS) + Open-Meteo, CC BY 4.0; cite both.
 - Real-time caveat for the protocol: at bulletin issue time only GloFAS forecasts/near-real-time values exist;
   hindcasts must lag the reanalysis by the product latency (decide the lag in protocol.md).
+
+## 03/11/2026: manuscript v2 (Q1 rewrite), citation audit, layout
+- v1 frozen copy (the version co-authors review): manuscript/_archive/v1_2026-11-02/ (main_v1.pdf).
+- v2 is a prose rewrite by an Opus subagent. A script checked that no number changed and that every cite key is
+  unchanged. Notes: manuscript/REWRITE_v2_notes.md.
+- Whole document 7,999 words (texcount -sum, after the edits below); 37 pages; compiles with 0 undefined references
+  and 0 overfull hbox.
+- Citation added at the owner's request: Nguyen B.T. & Nguyen T.T. 2025, Stat. Optim. Inf. Comput. 13(6):2601-2615,
+  doi:10.19139/soic-2310-5070-2524. Crossref metadata and the OpenAlex abstract were checked. Cited once, in
+  Discussion 6.1, for the claim "ML gains over traditional regression are reported in other prediction tasks".
+  The other 4 advisor papers are off-topic (vision, fashion, X-ray) and were not cited; that is the owner's call.
+- Citation audit (Sonnet subagent; report in the scratchpad citecheck/REPORT.md):
+  - 54 keys, all present in the bib; 46 DOIs, all match Crossref.
+  - Claim support: 0 not supported, 17 partly supported. Fixed in the text:
+    - Eslami: "upstream flow" removed.
+    - Chung: the mapping of thresholds to uses removed.
+    - Duc and others: "no test outside training" changed to "no test at stations left out".
+    - Wullems: "usually" removed.
+    - Cong: the intervals are now attributed to cong2026multi only.
+    - Pal: TDS "forecast" changed to "monthly TDS in a Hong Kong river".
+    - Apel 2020: "ENSO/streamflow" changed to "simple statistical, up to 9 months".
+    - Mills 2025: the citation was split from Mills 2022.
+    - Ferrer: 8.62-8.77 M in 2019-20 prices now stated.
+    - Le 8.3: now described as the compliance association in gated fields.
+    - Fixed cost: now "assumed, bounded by the Ferrer land rent".
+    - murphy1993good replaced by murphy1977value.
+    - MRC sentence in declarations: now accurate (the Mendeley set credits NHMDC and MRC).
+  - Bib fixes:
+    - nguyen2026physics: author name fixed.
+    - mills2022intensive: year set to 2023 (issue year, vol 15(2)).
+- Bug fix in scripts/run_h4.py: the salt-tolerant price discount was 458 VND/kg (372 x 1.232, the 2018 factor),
+  while the price used 1.215. It is now 452 (372 x 1.215). H4 results are unchanged (bootstrap_ci, returns,
+  rev_curve identical). Option-3 break-even, ungated, k = 0.4, no yield gain: 0.58 -> 0.57 (text, Fig. 8 caption and
+  captions.md updated). breakeven.csv gated/ungated rows changed slightly; that table is not in the paper (D5).
+- Layer A: 96.6% corrected to 96.7% (bootstrap_ci.csv 0.9665; the table already showed 0.967).
+- Layout:
+  - todo notes hidden (list in manuscript/TODO_before_submission.md).
+  - Figures use [!htb] and appear in citation order (REV figure now Fig. 5, reliability Fig. 6).
+  - Fig. 1 widened to 0.8 textwidth.
+  - xurl and emergencystretch added; no overfull lines remain.
+- Coordinates: package v3 (C:/Users/ASUS/Downloads/toa_do_tram_v3.zip) prefills 20 stations from Zenodo 20003854
+  and 23497554 (CC BY 4.0) for Hiếu and Nam to confirm on Google Maps. Waiting for the owner's approval to send.
+  - The two sources disagree at Sơn Đốc (4.9 km).
+  - Nam's Google Maps point and Zenodo 20003854 disagree at Đại Ngãi (6.3 km).
+  - Coordinates are used only for maps (no analysis uses them).
+- Layout round 2 (03/11, owner):
+  - Fig. 1 widened to full textwidth; Figs. 5 and 7 widened from 0.6 to 0.9 textwidth (fonts were too small).
+  - Tables: scripts/make_tables.py now writes ragged-right p{} columns (justified columns left wide word gaps), a
+    left-aligned note and [!htb]. Regenerated: only formatting changed, no number changed (diffed).
+  - main.tex now loads array.
+
+## 03/11/2026: manuscript gap fixes (owner's items 5-12; v2 open issues 3, 4a, 4c, 7-11)
+- New script scripts/calibration_summary.py (reads results/core_b/reliability.csv and metrics.csv; writes
+  results/core_b/calibration_summary.csv; self-check: binned REL - RES + UNC within 0.01 of the Brier score).
+  Descriptive, added after scoring (not in protocol-v1; no verdict uses it). Forward design, main variant, pooled,
+  10 equal-width bins (as Fig. 4). At 4 g/L:
+  - HGB: reliability term 0.003 (0.002736), count-weighted mean |p - o| 0.027 (0.027297), over the eight
+    intermediate bins 0.093 (0.093020); mean probability outside the 95% Wilson interval in 1 of 10 bins (0.8-0.9).
+  - QR: 0.004 (0.004152), 0.033 (0.033243); 2 of 10 bins outside.
+  - Text: "well calibrated except in the sparsely filled intermediate bins".
+- New generated table tables/tab_metrics.tex (make_tables.py core_metrics(); appendix, Table A.1): CRPS and Brier,
+  hit rate, false-alarm rate (POFD), PSS at 1, 2 and 4 g/L for HGB, QR, official, persistence, station climatology,
+  with paired-bootstrap CIs, all from results/core_b/bootstrap_ci.csv (forward, main, pooled). CRPS HGB 1.428
+  [1.280, 1.581], QR 3.181 [2.854, 3.518]; base rates 0.87 / 0.80 / 0.70.
+  - Text (4.1): HGB lowest Brier at 1, 2, 4 g/L; CIs of brier_diff_persist and brier_diff_official below 0 at
+    2 and 4 g/L, not at 1 g/L; persistence and official have higher hit rates at all thresholds.
+- Transfer cost, leave-province-out: HGB MAE - persistence 0.24 [0.13, 0.36] g/L (bootstrap_ci.csv lopo, main, hgb,
+  pooled, mae_diff_persist = 0.241631 [0.131697, 0.359840]); now beside leave-station-out 0.25 [0.14, 0.36].
+- Methods: paired comparisons with the official forecast (MAE/Brier/PSS differences) and all REV curves exclude the
+  one test row without an official forecast (run_core_b.py: nd_official mask, hitO/faO, REV on om rows).
+- 2020 check: 93% now stated beside the nominal 95% for the upper bound of a central 90% interval.
+- Highlight 5: "Severe-season forecast beats a fixed calendar in most settings, not climatology" (79 chars). Part
+  (a) held in main, cap and slope runs, FAO f >= 0.5; not with Delta_sev 8.3 or the upper tercile.
+  Note: verdict_h4.md FAO_f0.75 (ungated) has vs-climatology CI > 0 (not in the paper).
+- Title: "unseen stations" -> "withheld stations".
+- Discussion: 6.3 comparison with Tran 2025 / An-Vo 2021 no longer claims smaller values (designs not comparable);
+  6.1 "expected outcome" now the authors' attribution.
+- Fig. 4 caption: "at least 4 g/L" -> "exceeds 4 g/L" (the code uses y > c).
+- Prose tightened in Methods, Discussion, Results and Practical implications to stay within 8,000 words
+  (texcount -inc -sum: 7,999 -> 7,998; abstract 235 unchanged). No existing number changed; "27" (issue dates) dropped
+  from the Methods sentence on CI width, still in Data, Table 2 and Limitations.
+- D5 wording (owner, 03/11/2026): keep the manuscript text as is ("the reporting scope of H4 was revised"); do not
+  mention part (c) in the paper. Reserve answer if a reviewer asks: "Part (c) compared the forecast's value inside
+  and outside sluice systems. Under the loss model adopted in D4 the early-sowing effect is the same for both field
+  types, so the comparison is not identifiable (any difference comes only from the profit floor). This was recorded
+  as deviation D5 in the public protocol before the manuscript was written; the computed value is in
+  results/layer_a_decision/verdict_h4.md."
+- D6 added to docs/protocol.md (03/11): the calibration measures added after scoring (descriptive, no verdict).
+- Authors (owner, 03/11/2026): printed as Trong Nghia Le, Viet Nam Nguyen, Minh Hieu Ho, Thien Bao Nguyen (order changed: Nam 2nd, Hieu 3rd; no diacritics). Updated in main.tex, CRediT (declarations.tex) and CLAUDE.md. Cover letter title updated to "withheld stations" (make_cover_letter.py regenerated; only the title changed).
+
+## 03/11/2026: Climate Services Guide for Authors (owner's printout, read page by page) and submission package
+- Guide (Downloads/climate services.pdf, image-only; extract in the scratchpad cs_guide/guide_extract.md):
+  - Research paper max 8,000 words excluding references.
+  - Practical Implications max 1,200 words, required, placed directly after the abstract.
+  - Abstract max 250 words.
+  - Highlights 3-5 bullets of max 85 characters each, "encouraged", as a separate editable file.
+  - Graphical abstract optional.
+  - Data: Option C. Deposit the data in a repository and cite it, or explain why it cannot be shared.
+  - AI declaration: mandatory template; section placed before the references.
+  - Acknowledgements directly before the references.
+  - Competing interests via the Elsevier declarations tool (Word file).
+  - Figures as separate files: vector PDF/EPS, or line art at 1000 dpi.
+  - Maps need the boundary disclaimer.
+  - Preprints are allowed but optional (the advisor's no-preprint rule stands: decline SSRN).
+  - Keyword count was unreadable (clipped in the printout).
+  - The 8,000-word target in these notes was self-set before; it is now confirmed by the guide.
+- Changes:
+  - figure scripts (make_figures.py, run_h4.py) now also save vector PDF (the PNGs are byte-identical).
+  - The manuscript uses the PDF figures.
+  - The appendix was moved before the declarations.
+  - The AI heading now follows the guide.
+- Submission package: manuscript/make_submission.py -> Downloads/Climate_Services_submission.zip. Contents:
+  - LaTeX source with main.bbl; test-compiled clean in an empty folder.
+  - Manuscript.pdf.
+  - Figures/Figure_1-8.pdf, numbered in order of appearance.
+  - Highlights.docx and metadata.txt.
+  - Cover letter (.docx and .pdf).
+  - HUONG_DAN_NOP_BAI.md. Its checklist covers 8 open items: review, Fig. 0, CRediT, the declarations tool,
+    the AI statement, a Zenodo DOI for the data, removing the todos, and the APC.
+- AI declaration (owner, 03/11/2026): option (a), code only. The statement says Claude (Anthropic) was used "to write
+  and check the analysis code". It is CONDITIONAL: it applies only after the authors rewrite the manuscript text in
+  their own words, because the current text was drafted and revised with AI. The condition is recorded in the
+  declarations.tex todo and in HUONG_DAN_NOP_BAI.md item 5. The statement is not yet inserted in the PDF.
+
+## 03/11/2026: station coordinates and study-area map (Fig. 1)
+- Coordinates (display only; no analysis uses them): scripts/build_station_coords.py ->
+  data/meta/station_coords_final.csv -> merge_station_meta.py -> station_meta.csv. 34 of 37 stations have
+  coordinates, including all 28 bulletin stations.
+- Sources for the 28 bulletin stations:
+  - 5 Google Maps points checked by Hiếu/Nam (Tân An, Sông Đốc, Vàm Kênh, Đại Ngãi, Hòa Bình).
+  - 13 published points, CC BY 4.0 (Zenodo 23497554, from SRHMC station forms, preferred; else Zenodo 20003854).
+    Sơn Đốc uses the station-forms point; the two sources differ by 4.9 km.
+  - 9 OpenStreetMap (ODbL) points: the river point nearest the same-name Nominatim locality. Each was checked by
+    eye on per-station panels.
+  - Thạnh Phú: the locality point (K. Như Gia is not in OSM).
+- Rejected: Cầu Nổi (the OSM match was a homonym in Tây Ninh, 11.25 N). Xuân Hòa and Láng Thé were not found.
+  All three are extra stations.
+- Hiếu/Nam's returned sheet: data/meta/station_coords_check.csv. Their note: they could not see gauge buildings at
+  the published points; these are accepted as approximate.
+- Fig. 1 map: scripts/make_fig00_map.py, Natural Earth basemap.
+  - Caption carries the boundary disclaimer the guide requires.
+  - Fixed: the Trà Kha label hid the Long Phú dot.
+- Text:
+  - Study-area paragraph added (9 provinces before the 2025 merger; 1.5-120 km from the mouth; 2 inland canals).
+  - Limitations no longer say coordinates are being verified.
+  - The Methods deviations list was compressed and now includes D6.
+- Words (texcount -sum, whole document) 8,064. Practical Implications (481) has its own 1,200 cap in the guide.
+  The research paper without it and without the declarations is about 7,210 words, within the 8,000 limit
+  (references excluded).

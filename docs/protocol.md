@@ -196,3 +196,9 @@ Approved by the owner on 01/11/2026, after the core-B run (none changes a model,
   identical inside and outside wherever the profit floor does not bind; the computed difference (0.037 M VND/ha x
   C/L, from the floor at C/L >= 0.75) is an artefact. Part (c) is therefore not reported in the manuscript; the
   computed value stays in results/layer_a_decision/verdict_h4.md. H4 is reported on parts (a) and (b).
+- **D6** (03/11/2026; after scoring, during manuscript revision). Two descriptive calibration measures for the
+  4 g/L probabilities were added to the reporting: the reliability term of the Brier score and the count-weighted
+  mean |forecast probability - observed frequency| over the reliability-diagram bins (scripts/calibration_summary.py,
+  results/core_b/calibration_summary.csv). They are computed from the released reliability bins and do not enter any
+  hypothesis criterion; no verdict changes. The pre-specified metrics (CRPS, hit and false-alarm rates, PSS at 1, 2
+  and 4 g/L), computed at the time of scoring, are now reported in an appendix table.

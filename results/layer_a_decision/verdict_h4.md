@@ -68,15 +68,15 @@ m
 ```
   group  option_a  option_b  p_star_main  p_star_sweep_min  p_star_sweep_max  share_sweep_with_crossing  winner_at_p05_main  share_forecasts_above_main
   gated         1         2          NaN            -0.000            -0.000                      0.111                   2                         NaN
-  gated         1         3        0.991             0.763             0.991                      0.300                   1                       0.043
+  gated         1         3        0.922             0.709             0.922                      0.300                   1                       0.086
   gated         1         6          NaN               NaN               NaN                      0.000                   1                         NaN
   gated         2         3          NaN               NaN               NaN                      0.000                   2                         NaN
   gated         2         6          NaN               NaN               NaN                      0.000                   2                         NaN
   gated         3         6          NaN               NaN               NaN                      0.000                   3                         NaN
 ungated         1         2          NaN             0.079             0.294                      0.444                   2                         NaN
-ungated         1         3          NaN             0.390             0.938                      0.500                   3                         NaN
+ungated         1         3          NaN             0.382             0.924                      0.500                   3                         NaN
 ungated         1         6          NaN               NaN               NaN                      0.000                   1                         NaN
-ungated         2         3        0.033             0.004             0.494                      0.411                   2                       0.957
+ungated         2         3        0.039             0.008             0.497                      0.411                   2                       0.957
 ungated         2         6          NaN               NaN               NaN                      0.000                   2                         NaN
 ungated         3         6          NaN               NaN               NaN                      0.000                   3                         NaN
 ```

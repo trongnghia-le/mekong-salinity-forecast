@@ -1,0 +1,15 @@
+﻿station,status,lat,lon,river_name_osm,dist_loc_river_km,loc_name,loc_type,loc_lat,loc_lon,loc_osm,other_far_candidates,n_river_lines,river_regex,province_hint,n_nominatim
+Cát Lái,OK,10.75145,106.78201,Sông Đồng Nai,2.2,"Phường Cát Lái, Thành phố Hồ Chí Minh, 71115, Việt Nam",suburb,10.769879,106.774691,relation/7370760,0,53,Sài Gòn|Đồng Nai|Nhà Bè,Hồ Chí Minh,
+Bến Lức,OK,10.6406,106.47441,Sông Vàm Cỏ Đông,1.14,"Xã Bến Lức, Tỉnh Tây Ninh, 85000, Việt Nam",town,10.641631,106.484759,relation/8435467,0,13,Vàm Cỏ Đông|Vàm Cỏ,Long An|Tây Ninh,
+Xuân Khánh,OK,10.82368,106.38666,Sông Vàm Cỏ Đông,1.03,"Ấp Xuân Khánh, Xã Hòa Khánh, Tỉnh Tây Ninh, Việt Nam",hamlet,10.830647,106.392914,relation/21288069,0,11,Vàm Cỏ Đông|Vàm Cỏ,Long An|Tây Ninh,
+Tuyên Nhơn,OK,10.65869,106.19074,Sông Vàm Cỏ Tây,0.05,"Cầu Tuyên Nhơn, Xã Thạnh Hóa, Xã Thạnh Phước, Tỉnh Tây Ninh, Việt Nam",trunk,10.659158,106.190725,way/271099787,0,8,Vàm Cỏ Tây,Long An|Tây Ninh,
+Thạnh Phú,NO RIVER,,,,,"Thạnh Phú, Thành phố Cần Thơ, Việt Nam",town,9.502343,105.850957,node/13652036882,0,0,Như Gia,Sóc Trăng|Cần Thơ,
+Sóc Trăng,OK,9.60819,105.96782,Sông Maspero,0.86,"Sóc Trăng, Thành phố Cần Thơ, 96113, Việt Nam",city,9.602672,105.973321,node/369487102,0,1,Maspero,Sóc Trăng|Cần Thơ,
+Gành Hào,OK,9.02737,105.41709,Sông Gành Hào,0.3,"Gành Hào, Xã Gành Hào, Tỉnh Cà Mau, Việt Nam",town,9.026858,105.419733,node/369497179,0,2,Gành Hào,Bạc Liêu|Cà Mau,
+Rạch Giá,OK,10.01226,105.0833,Sông Kiên,0.17,"Rạch Giá, Tỉnh An Giang, 91110, Việt Nam",city,10.01071,105.083262,node/369487039,0,5,Kiên|Cái Sắn|Rạch Giá,Kiên Giang|An Giang,
+Gò Quao,OK,9.72578,105.27408,Sông Cái Lớn,0.38,"Gò Quao, Xã Gò Quao, Tỉnh An Giang, Việt Nam",town,9.728064,105.276639,node/369504891,0,7,Cái Lớn,Kiên Giang|An Giang,
+An Ninh,OK,9.86057,105.13134,Sông Cái Bé,0.08,"An Ninh, Xã Bình An, Tỉnh An Giang, Việt Nam",village,9.860845,105.132004,node/11806799813,0,2,Cái Bé,Kiên Giang|An Giang,
+Cầu Nổi,CHECK: river 5.1 km from locality; lat outside 8.5-11,11.24809,106.11301,Sông Vàm Cỏ Đông,5.1,"Cầu Nổi, Phường Thanh Điền, Tỉnh Tây Ninh, 84060, Việt Nam",trunk,11.291086,106.096771,way/150885223,0,8,Vàm Cỏ,Long An|Tây Ninh,
+Cà Mau,OK,9.17712,105.1464,Sông Gành Hào,0.5,"Cà Mau, Phường Tân Thành, Tỉnh Cà Mau, 98100, Việt Nam",city,9.1762,105.150841,node/369486925,0,1,Gành Hào,Cà Mau,
+Xuân Hòa,NO LOCALITY,,,,,,,,,,,,Cửa Tiểu|Tiền,Tiền Giang|Đồng Tháp,4
+Láng Thé,NO LOCALITY,,,,,,,,,,,,Cổ Chiên,Trà Vinh|Vĩnh Long,0

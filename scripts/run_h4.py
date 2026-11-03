@@ -194,7 +194,8 @@ ci.to_csv(f"{OUT}/bootstrap_ci.csv", index=False)
 # ---------------- break-even ----------------
 PRICE = 5.451 * 1.215      # k VND/kg, M22 Table 1 x year factor 1.215
 STV_GAIN = 0.364 * 1000 * PRICE / 1000      # 364 kg/ha x price -> M VND/ha (M22 Table 3)
-STV_DISC = 458e-6                           # 458 VND/kg (M22 Table 4) in M VND per kg
+STV_DISC = 372e-6 * 1.215                   # 372 VND/kg (M22 Table 4) x year factor 1.215 = 452 VND/kg, M VND per kg
+                                            # (was 458 = 372 x 1.232, the 2018 factor; corrected 03/11/2026 to match PRICE)
 F_RANGE = (0.0, 3.15)
 K_RANGE = (0.2, 0.6)
 dm = MAIN
@@ -279,7 +280,7 @@ BLUE, ORANGE, GREEN, PURPLE, GREY = "#2a78d6", "#eb6834", "#008300", "#6250d6", 
 
 
 def save(fig, name):
-    for ext in ("png", "svg"):
+    for ext in ("png", "svg", "pdf"):  # pdf: vector file for journal submission
         fig.savefig(f"figures/{name}.{ext}", dpi=300, bbox_inches="tight")
     plt.close(fig)
 
@@ -436,7 +437,7 @@ Self-check: {SELF} (perfect information has the highest mean return at every C/L
 - Bootstrap: seasons resampled together (all stations), same resamples for gated, ungated and their difference; separate resample set (same seed) for the tercile sample.
 - H4 (c) evaluated on the regret-reduction areas vs fixed AND vs climatology (both must have CI > 0). H4 (a), (b) require both field types.
 - FAO variant: ECe = 1.56 f S, Y_rel = max(0, 1 - 0.12 (ECe - 3)), loss = 43.4 M x (1 - Y_rel), profit_std = max(-20, 23.4 - loss); gated f = 0.2 x ungated f; early-sowing gain in a severe season = min(Delta_sev, loss) (a recovered amount cannot exceed the loss; my choice). With f = 0.1 field salinity never exceeds the threshold, so Delta = 0 and the forecast has no value by construction.
-- Break-even: representative S = pooled mean of capped smax over severe ({S_SEV:.2f}) / non-severe ({S_MILD:.2f}) station-seasons (stations differ in level, Son Doc is much higher; not station-specific). Main m = midpoint of the file's range (gated 4.15, ungated 0.25), k = 0.4, F = 3.15 (rent anchor). Option 3 = profit with slope x k, plus 364 kg/ha x 6.62 k VND/kg (price 5.451 x 1.215), minus 458 VND/kg x yield (yield slope also x k). The +364 kg gain is an average over mixed salinity, so it may double count with k: sweep includes a no-yield-gain variant.
+- Break-even: representative S = pooled mean of capped smax over severe ({S_SEV:.2f}) / non-severe ({S_MILD:.2f}) station-seasons (stations differ in level, Son Doc is much higher; not station-specific). Main m = midpoint of the file's range (gated 4.15, ungated 0.25), k = 0.4, F = 3.15 (rent anchor). Option 3 = profit with slope x k, plus 364 kg/ha x 6.62 k VND/kg (price 5.451 x 1.215), minus 452 VND/kg (372 x 1.215) x yield (yield slope also x k). The +364 kg gain is an average over mixed salinity, so it may double count with k: sweep includes a no-yield-gain variant.
 - Sweep: m (9 values over the group range) x k (0.2-0.6, 5) x F (0-3.15, 7) x yield-gain on/off; reported min/max p* where a crossing in [0,1] exists and the share of sweep points with a crossing. Delta_sev fixed at 10.1 in the sweep.
 
 ## Proposed deviations (not applied; docs/protocol.md untouched)

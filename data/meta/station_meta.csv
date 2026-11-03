@@ -1,38 +1,38 @@
-station,river,km_from_mouth,province_old,province_new,lat,lon,coord_source,sluice_status,sluice_basis
-Cát Lái,Sài Gòn,58.0,Hồ Chí Minh,TP Hồ Chí Minh,,,to_verify,outside,"both passes agree (reasoning, no boundary map)"
-Bến Lức,Vàm Cỏ Đông,67.0,Long An,Tây Ninh,,,to_verify,to_verify,passes disagree or unknown
-Xuân Khánh,Vàm Cỏ Đông,95.0,Long An,Tây Ninh,,,to_verify,outside,"both passes agree (reasoning, no boundary map)"
-Tân An,Vàm Cỏ Tây,80.0,Long An,Tây Ninh,,,to_verify,outside,"both passes agree (reasoning, no boundary map)"
-Tuyên Nhơn,Vàm Cỏ Tây,120.0,Long An,Tây Ninh,,,to_verify,outside,"both passes agree (reasoning, no boundary map)"
-Vàm Kênh,Cửa Tiểu,2.0,Tiền Giang,Đồng Tháp,,,to_verify,to_verify,passes disagree or unknown
-Hòa Bình,Cửa Tiểu,18.0,Tiền Giang,Đồng Tháp,,,to_verify,outside,"both passes agree (reasoning, no boundary map)"
-An Định,Tiền,48.0,Tiền Giang,Đồng Tháp,,,to_verify,outside,"both passes agree (reasoning, no boundary map)"
-Bình Đại,Cửa Đại,4.0,Bến Tre,Vĩnh Long,,,to_verify,outside,"both passes agree (reasoning, no boundary map)"
-Lộc Thuận,Cửa Đại,18.0,Bến Tre,Vĩnh Long,,,to_verify,outside,"both passes agree (reasoning, no boundary map)"
-An Thuận,Hàm Luông,10.0,Bến Tre,Vĩnh Long,,,to_verify,outside,"both passes agree (reasoning, no boundary map)"
-Sơn Đốc,Hàm Luông,20.0,Bến Tre,Vĩnh Long,,,to_verify,outside,"both passes agree (reasoning, no boundary map)"
-Bến Trại,Cổ Chiên (cửa Cổ Chiên),10.0,Bến Tre,Vĩnh Long,,,to_verify,outside,"both passes agree (reasoning, no boundary map)"
-Hương Mỹ,Cổ Chiên (cửa Cổ Chiên),25.0,Bến Tre,Vĩnh Long,,,to_verify,outside,"both passes agree (reasoning, no boundary map)"
-Hưng Mỹ,Cổ Chiên (cửa Cung Hầu),17.0,Trà Vinh,Vĩnh Long,,,to_verify,outside,"both passes agree (reasoning, no boundary map)"
-Cầu Quan,Hậu (cửa Định An),32.0,Trà Vinh,Vĩnh Long,,,to_verify,outside,"both passes agree (reasoning, no boundary map)"
-Trà Vinh,Cổ Chiên (cửa Cung Hầu),28.0,Trà Vinh,Vĩnh Long,,,to_verify,outside,"both passes agree (reasoning, no boundary map)"
-Trà Kha,Hậu (cửa Định An),7.0,Trà Vinh,Vĩnh Long,,,to_verify,outside,"both passes agree (reasoning, no boundary map)"
-Long Phú,Hậu (cửa Trần Đề),15.0,Sóc Trăng,Cần Thơ,,,to_verify,outside,"both passes agree (reasoning, no boundary map)"
-Đại Ngãi,Hậu (cửa Tranh Đề),35.0,Sóc Trăng,Cần Thơ,,,to_verify,outside,"both passes agree (reasoning, no boundary map)"
-Trần Đề,Hậu,10.0,Sóc Trăng,Cần Thơ,,,to_verify,outside,"both passes agree (reasoning, no boundary map)"
-Thạnh Phú,K. Như Gia,Nội đồng,Sóc Trăng,Cần Thơ,,,to_verify,to_verify,passes disagree or unknown
-Sóc Trăng,K. Maspero,Nội đồng,Sóc Trăng,Cần Thơ,,,to_verify,to_verify,passes disagree or unknown
-Gành Hào,Gành Hào,2.0,Bạc Liêu,Cà Mau,,,to_verify,to_verify,passes disagree or unknown
-Sông Đốc,Sông Đốc,1.5,Cà Mau,Cà Mau,,,to_verify,outside,"both passes agree (reasoning, no boundary map)"
-Rạch Giá,Kiên,7.0,Kiên Giang,An Giang,,,to_verify,to_verify,passes disagree or unknown
-Gò Quao,Cái Lớn,35.0,Kiên Giang,An Giang,,,to_verify,inside,"both passes agree (reasoning, no boundary map)"
-An Ninh,Cái Bé,8.0,Kiên Giang,An Giang,,,to_verify,to_verify,passes disagree or unknown
-Cầu Nổi,Vàm Cỏ,20.0,Long An,Tây Ninh (inferred),,,to_verify,to_verify,passes disagree or unknown
-Xẻo Rô,Cái Lớn,7.0,Kiên Giang,An Giang,,,to_verify,boundary,"both passes agree (reasoning, no boundary map)"
-Mỹ Tho,Tiền,55.0,Tiền Giang,Đồng Tháp,,,to_verify,outside,"both passes agree (reasoning, no boundary map)"
-Đồng Tâm,Tiền,63.0,Tiền Giang,Đồng Tháp,,,to_verify,outside,"both passes agree (reasoning, no boundary map)"
-Cà Mau,Gành Hào,Nội đồng,Cà Mau,Cà Mau,,,to_verify,to_verify,passes disagree or unknown
-Xuân Hòa,Cửa Tiểu,,"Tiền Giang (inferred, unverified)",Đồng Tháp (inferred),,,to_verify,to_verify,passes disagree or unknown
-Giao Hòa,Cửa Đại,,"Bến Tre (inferred, unverified)",Vĩnh Long (inferred),,,to_verify,to_verify,passes disagree or unknown
-Mỹ Hóa,Hàm Luông,,Bến Tre (inferred),Vĩnh Long (inferred),,,to_verify,to_verify,passes disagree or unknown
-Láng Thé,Cổ Chiên,,"Trà Vinh (inferred, unverified)",Vĩnh Long (inferred),,,to_verify,to_verify,passes disagree or unknown
+station,river,km_from_mouth,province_old,province_new,lat,lon,coord_source,coord_quality,sluice_status,sluice_basis
+Cát Lái,Sài Gòn,58.0,Hồ Chí Minh,TP Hồ Chí Minh,10.75145,106.78201,OpenStreetMap (ODbL): Sông Đồng Nai nearest to Phường Cát Lái,approximate (river point nearest the named locality),outside,"both passes agree (reasoning, no boundary map)"
+Bến Lức,Vàm Cỏ Đông,67.0,Long An,Tây Ninh,10.6406,106.47441,OpenStreetMap (ODbL): Sông Vàm Cỏ Đông nearest to Xã Bến Lức,approximate (river point nearest the named locality),to_verify,passes disagree or unknown
+Xuân Khánh,Vàm Cỏ Đông,95.0,Long An,Tây Ninh,10.82368,106.38666,OpenStreetMap (ODbL): Sông Vàm Cỏ Đông nearest to Ấp Xuân Khánh,approximate (river point nearest the named locality),outside,"both passes agree (reasoning, no boundary map)"
+Tân An,Vàm Cỏ Tây,80.0,Long An,Tây Ninh,10.5509813,106.3747789,Google Maps (Nam),checked,outside,"both passes agree (reasoning, no boundary map)"
+Tuyên Nhơn,Vàm Cỏ Tây,120.0,Long An,Tây Ninh,10.65869,106.19074,OpenStreetMap (ODbL): Sông Vàm Cỏ Tây nearest to Cầu Tuyên Nhơn,approximate (river point nearest the named locality),outside,"both passes agree (reasoning, no boundary map)"
+Vàm Kênh,Cửa Tiểu,2.0,Tiền Giang,Đồng Tháp,10.27527689,106.7377838,"Google Maps (Nam), chosen by Hiếu/Nam over the published point",checked,to_verify,passes disagree or unknown
+Hòa Bình,Cửa Tiểu,18.0,Tiền Giang,Đồng Tháp,10.29061038,106.5911928,"Google Maps (Hiếu/Nam), corrected point",checked,outside,"both passes agree (reasoning, no boundary map)"
+An Định,Tiền,48.0,Tiền Giang,Đồng Tháp,10.3127,106.4298,"Zenodo 10.5281/zenodo.20003854 (Nguyen D.Q.H. et al. 2026, CC BY 4.0)","published, approximate",outside,"both passes agree (reasoning, no boundary map)"
+Bình Đại,Cửa Đại,4.0,Bến Tre,Vĩnh Long,10.197028,106.711222,"Zenodo 10.5281/zenodo.23497554 (Nguyen H.T.T. et al. 2026, CC BY 4.0), nguồn gốc: Station forms (SRHMC)","published, approximate",outside,"both passes agree (reasoning, no boundary map)"
+Lộc Thuận,Cửa Đại,18.0,Bến Tre,Vĩnh Long,10.243056,106.6,"Zenodo 10.5281/zenodo.23497554 (Nguyen H.T.T. et al. 2026, CC BY 4.0), nguồn gốc: Station forms (SRHMC)","published, approximate",outside,"both passes agree (reasoning, no boundary map)"
+An Thuận,Hàm Luông,10.0,Bến Tre,Vĩnh Long,9.976389,106.605222,"Zenodo 10.5281/zenodo.23497554 (Nguyen H.T.T. et al. 2026, CC BY 4.0), nguồn gốc: Station forms (SRHMC)","published, approximate",outside,"both passes agree (reasoning, no boundary map)"
+Sơn Đốc,Hàm Luông,20.0,Bến Tre,Vĩnh Long,10.054167,106.463889,"Zenodo 10.5281/zenodo.23497554 (Nguyen H.T.T. et al. 2026, CC BY 4.0), nguồn gốc: Station forms (SRHMC)","published, approximate",outside,"both passes agree (reasoning, no boundary map)"
+Bến Trại,Cổ Chiên (cửa Cổ Chiên),10.0,Bến Tre,Vĩnh Long,9.880889,106.529,"Zenodo 10.5281/zenodo.23497554 (Nguyen H.T.T. et al. 2026, CC BY 4.0), nguồn gốc: Station forms (SRHMC)","published, approximate",outside,"both passes agree (reasoning, no boundary map)"
+Hương Mỹ,Cổ Chiên (cửa Cổ Chiên),25.0,Bến Tre,Vĩnh Long,9.980556,106.388889,"Zenodo 10.5281/zenodo.23497554 (Nguyen H.T.T. et al. 2026, CC BY 4.0), nguồn gốc: Station forms (SRHMC)","published, approximate",outside,"both passes agree (reasoning, no boundary map)"
+Hưng Mỹ,Cổ Chiên (cửa Cung Hầu),17.0,Trà Vinh,Vĩnh Long,9.8848,106.4492,"Zenodo 10.5281/zenodo.20003854 (Nguyen D.Q.H. et al. 2026, CC BY 4.0)","published, approximate",outside,"both passes agree (reasoning, no boundary map)"
+Cầu Quan,Hậu (cửa Định An),32.0,Trà Vinh,Vĩnh Long,9.7561,106.1119,"Zenodo 10.5281/zenodo.20003854 (Nguyen D.Q.H. et al. 2026, CC BY 4.0)","published, approximate",outside,"both passes agree (reasoning, no boundary map)"
+Trà Vinh,Cổ Chiên (cửa Cung Hầu),28.0,Trà Vinh,Vĩnh Long,9.9774,106.3558,"Zenodo 10.5281/zenodo.20003854 (Nguyen D.Q.H. et al. 2026, CC BY 4.0)","published, approximate",outside,"both passes agree (reasoning, no boundary map)"
+Trà Kha,Hậu (cửa Định An),7.0,Trà Vinh,Vĩnh Long,9.645,106.2251,"Zenodo 10.5281/zenodo.20003854 (Nguyen D.Q.H. et al. 2026, CC BY 4.0)","published, approximate",outside,"both passes agree (reasoning, no boundary map)"
+Long Phú,Hậu (cửa Trần Đề),15.0,Sóc Trăng,Cần Thơ,9.6143,106.1506,"Zenodo 10.5281/zenodo.20003854 (Nguyen D.Q.H. et al. 2026, CC BY 4.0)","published, approximate",outside,"both passes agree (reasoning, no boundary map)"
+Đại Ngãi,Hậu (cửa Tranh Đề),35.0,Sóc Trăng,Cần Thơ,9.734356059,106.0739702,"Google Maps (Nam), chosen by Hiếu/Nam over the published point",checked,outside,"both passes agree (reasoning, no boundary map)"
+Trần Đề,Hậu,10.0,Sóc Trăng,Cần Thơ,9.5294,106.2038,"Zenodo 10.5281/zenodo.20003854 (Nguyen D.Q.H. et al. 2026, CC BY 4.0)","published, approximate",outside,"both passes agree (reasoning, no boundary map)"
+Thạnh Phú,K. Như Gia,Nội đồng,Sóc Trăng,Cần Thơ,9.502343,105.850957,OpenStreetMap (ODbL): locality Thạnh Phú (K. Như Gia not in OSM),approximate (locality),to_verify,passes disagree or unknown
+Sóc Trăng,K. Maspero,Nội đồng,Sóc Trăng,Cần Thơ,9.60819,105.96782,OpenStreetMap (ODbL): Sông Maspero nearest to Sóc Trăng,approximate (river point nearest the named locality),to_verify,passes disagree or unknown
+Gành Hào,Gành Hào,2.0,Bạc Liêu,Cà Mau,9.02737,105.41709,OpenStreetMap (ODbL): Sông Gành Hào nearest to Gành Hào,approximate (river point nearest the named locality),to_verify,passes disagree or unknown
+Sông Đốc,Sông Đốc,1.5,Cà Mau,Cà Mau,9.041589565,104.833188,Google Maps (Nam),checked,outside,"both passes agree (reasoning, no boundary map)"
+Rạch Giá,Kiên,7.0,Kiên Giang,An Giang,10.01226,105.0833,OpenStreetMap (ODbL): Sông Kiên nearest to Rạch Giá,approximate (river point nearest the named locality),to_verify,passes disagree or unknown
+Gò Quao,Cái Lớn,35.0,Kiên Giang,An Giang,9.72578,105.27408,OpenStreetMap (ODbL): Sông Cái Lớn nearest to Gò Quao,approximate (river point nearest the named locality),inside,"both passes agree (reasoning, no boundary map)"
+An Ninh,Cái Bé,8.0,Kiên Giang,An Giang,9.86057,105.13134,OpenStreetMap (ODbL): Sông Cái Bé nearest to An Ninh,approximate (river point nearest the named locality),to_verify,passes disagree or unknown
+Cầu Nổi,Vàm Cỏ,20.0,Long An,Tây Ninh (inferred),,,none,none,to_verify,passes disagree or unknown
+Xẻo Rô,Cái Lớn,7.0,Kiên Giang,An Giang,9.864857641,105.1111433,Google Maps (Nam),checked,boundary,"both passes agree (reasoning, no boundary map)"
+Mỹ Tho,Tiền,55.0,Tiền Giang,Đồng Tháp,10.3485,106.3791,"Zenodo 10.5281/zenodo.20003854 (Nguyen D.Q.H. et al. 2026, CC BY 4.0)","published, approximate",outside,"both passes agree (reasoning, no boundary map)"
+Đồng Tâm,Tiền,63.0,Tiền Giang,Đồng Tháp,10.3336,106.3458,"Zenodo 10.5281/zenodo.20003854 (Nguyen D.Q.H. et al. 2026, CC BY 4.0)","published, approximate",outside,"both passes agree (reasoning, no boundary map)"
+Cà Mau,Gành Hào,Nội đồng,Cà Mau,Cà Mau,9.17712,105.1464,OpenStreetMap (ODbL): Sông Gành Hào nearest to Cà Mau,approximate (river point nearest the named locality),to_verify,passes disagree or unknown
+Xuân Hòa,Cửa Tiểu,,"Tiền Giang (inferred, unverified)",Đồng Tháp (inferred),,,none,none,to_verify,passes disagree or unknown
+Giao Hòa,Cửa Đại,,"Bến Tre (inferred, unverified)",Vĩnh Long (inferred),10.29736,106.44057,"Zenodo 10.5281/zenodo.23497554 (Nguyen H.T.T. et al. 2026, CC BY 4.0), nguồn gốc: Georeferenced forecast map","published, approximate",to_verify,passes disagree or unknown
+Mỹ Hóa,Hàm Luông,,Bến Tre (inferred),Vĩnh Long (inferred),10.218194,106.352278,"Zenodo 10.5281/zenodo.23497554 (Nguyen H.T.T. et al. 2026, CC BY 4.0), nguồn gốc: Station forms (SRHMC)","published, approximate",to_verify,passes disagree or unknown
+Láng Thé,Cổ Chiên,,"Trà Vinh (inferred, unverified)",Vĩnh Long (inferred),,,none,none,to_verify,passes disagree or unknown

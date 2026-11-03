@@ -34,7 +34,7 @@ METH = {  # key: (label, colour, marker)
 
 
 def save(fig, name):
-    for ext in ("png", "svg"):
+    for ext in ("png", "svg", "pdf"):  # pdf: vector file for journal submission
         fig.savefig(f"figures/{name}.{ext}", dpi=300, bbox_inches="tight")
     plt.close(fig)
 
